@@ -238,6 +238,8 @@
   .article-embed{border-left:4px solid var(--gold); background:#FBF8EE; padding:16px 18px; margin:22px 0; font-size:.88rem; color:var(--ink-70);}
   .article-embed a{text-decoration:underline;}
   .map-embed{border:1px solid var(--paper-line); margin:16px auto 8px; height:480px; max-width:1152px;}
+  .quiz-embed-wrap{margin:26px auto 10px; max-width:1100px;}
+  .quiz-embed-wrap iframe{width:100%; height:680px; border:1px solid var(--paper-line); display:block;}
   .embed-app-wrap{border:1px solid var(--paper-line); margin:14px 0 40px; background:#fff;}
   .embed-app{width:100%; height:1050px; border:none; display:block;}
   .embed-app.short{height:520px;}
@@ -443,7 +445,7 @@
       <h3>Storia della musica</h3>
       <div class="timeline">
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-lineadeltempo','prima')">Linea del tempo</button><button class="quiz-tag" onclick="openQuiz('lineadeltempo','prima')">quiz</button></h4></div>
-        <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-igreci','prima')">I Greci</button></h4></div>
+        <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-igreci','prima')">I Greci</button><button class="quiz-tag" onclick="openTopic('quiz-igreci','prima')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-gregoriano','prima')">Canto gregoriano</button><button class="quiz-tag" onclick="openQuiz('gregoriano','prima')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-polifonia-prima','prima')">Nascita della polifonia e della scrittura musicale / Trovatori e trovieri</button><button class="quiz-tag" onclick="openQuiz('polifonia','prima')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-rinascimento-3','prima')">Rinascimento</button></h4></div>
@@ -507,7 +509,7 @@
       <h3>Storia della musica</h3>
       <div class="timeline">
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-lineadeltempo','seconda')">Linea del tempo</button><button class="quiz-tag" onclick="openQuiz('lineadeltempo','seconda')">quiz</button></h4></div>
-        <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-igreci','seconda')">I Greci</button></h4></div>
+        <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-igreci','seconda')">I Greci</button><button class="quiz-tag" onclick="openTopic('quiz-igreci','seconda')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-gregoriano','seconda')">Canto gregoriano</button><button class="quiz-tag" onclick="openQuiz('gregoriano','seconda')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-polifonia','seconda')">Nascita della polifonia e della scrittura musicale / Trovatori e trovieri</button><button class="quiz-tag" onclick="openQuiz('polifonia','seconda')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-rinascimento-3','seconda')">Rinascimento</button></h4></div>
@@ -574,7 +576,7 @@
       <h3>Storia della musica</h3>
       <div class="timeline">
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-lineadeltempo','terza')">Linea del tempo</button><button class="quiz-tag" onclick="openQuiz('lineadeltempo','terza')">quiz</button></h4></div>
-        <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-igreci','terza')">I Greci</button></h4></div>
+        <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-igreci','terza')">I Greci</button><button class="quiz-tag" onclick="openTopic('quiz-igreci','terza')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-gregoriano','terza')">Canto gregoriano</button><button class="quiz-tag" onclick="openQuiz('gregoriano','terza')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-polifonia','terza')">Nascita della polifonia e della scrittura musicale / Trovatori e trovieri</button><button class="quiz-tag" onclick="openQuiz('polifonia','terza')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-rinascimento-3','terza')">Rinascimento</button></h4></div>
@@ -660,7 +662,7 @@
       <p class="facile-line facile-intro">Ogni pagina ha un bottone per ascoltare il testo.</p>
       <div class="timeline">
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-lineadeltempo-facile','riassunti')">Linea del tempo</button><button class="quiz-tag" onclick="openQuiz('lineadeltempo','riassunti')">quiz</button></h4></div>
-        <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-igreci-facile','riassunti')">I Greci</button></h4></div>
+        <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-igreci-facile','riassunti')">I Greci</button><button class="quiz-tag" onclick="openTopic('quiz-igreci','riassunti')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-gregoriano-facile','riassunti')">Il canto gregoriano</button><button class="quiz-tag" onclick="openQuiz('gregoriano','riassunti')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-polifonia-facile','riassunti')">La nascita della polifonia</button><button class="quiz-tag" onclick="openQuiz('polifonia','riassunti')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-rinascimento-facile','riassunti')">Il Rinascimento</button></h4></div>
@@ -2116,6 +2118,17 @@
   </div></div>
 </section>
 
+<!-- ================= QUIZ I GRECI (LearningApps) ================= -->
+<section id="view-quiz-igreci" class="view class-page">
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-hero" style="border-color:var(--burgundy);"><h2>Quiz — I Greci</h2></div>
+  <div class="sections"><div class="article-body">
+    <div class="quiz-embed-wrap">
+      <iframe src="https://learningapps.org/watch?v=p19bjnpcc26" style="border:0px;width:100%;height:680px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    </div>
+  </div></div>
+</section>
+
 <!-- ================= SUBPAGE (placeholder condiviso) ================= -->
 <section id="view-subpage" class="view class-page">
   <div class="class-top"><button class="back-btn" onclick="backFromSub()">← Indietro</button></div>
@@ -2133,7 +2146,7 @@
   var returnTo = 'home';
   function goBack(){ show(returnTo); }
   function show(id){
-    ['home','prima','seconda','terza','trame','riassunti','dettato','escape-opera','quizpage','topic-lineadeltempo','topic-igreci','topic-gregoriano','topic-polifonia','topic-polifonia-prima','topic-teorianote','topic-classicismo','topic-classicismo-2','topic-classicismo-3','topic-rinascimento-3','topic-barocco-3','topic-lineadeltempo-facile','topic-igreci-facile','topic-gregoriano-facile','topic-polifonia-facile','topic-rinascimento-facile','topic-barocco-facile','topic-classicismo-facile','topic-note-facile','bio-monteverdi','bio-vivaldi','bio-vivaldi-3','bio-handel','bio-handel-2','bio-handel-3','bio-bach','bio-bach-2','bio-bach-3','bio-haydn','bio-mozart','bio-mozart-3','bio-beethoven','subpage'].forEach(function(v){
+    ['home','prima','seconda','terza','trame','riassunti','dettato','escape-opera','quizpage','quiz-igreci','topic-lineadeltempo','topic-igreci','topic-gregoriano','topic-polifonia','topic-polifonia-prima','topic-teorianote','topic-classicismo','topic-classicismo-2','topic-classicismo-3','topic-rinascimento-3','topic-barocco-3','topic-lineadeltempo-facile','topic-igreci-facile','topic-gregoriano-facile','topic-polifonia-facile','topic-rinascimento-facile','topic-barocco-facile','topic-classicismo-facile','topic-note-facile','bio-monteverdi','bio-vivaldi','bio-vivaldi-3','bio-handel','bio-handel-2','bio-handel-3','bio-bach','bio-bach-2','bio-bach-3','bio-haydn','bio-mozart','bio-mozart-3','bio-beethoven','subpage'].forEach(function(v){
       document.getElementById('view-'+v).classList.toggle('active', v===id);
     });
     window.scrollTo(0,0);
