@@ -166,6 +166,8 @@
   .article-body{max-width:1152px; margin:0 auto;}
   .article-body > img{width:100%; height:auto; border:1px solid var(--paper-line); margin:0 0 26px;}
   .article-body h3{margin:30px 0 10px; font-size:1.08rem;}
+  .article-body h2.paragrafo{margin:48px 0 6px; font-size:1.5rem;}
+  .article-body h2.paragrafo:first-child{margin-top:8px;}
   .listen-btn{display:inline-flex; align-items:center; gap:8px; margin:0 0 22px; padding:10px 20px; background:var(--gold-soft); border:1px solid var(--gold); border-radius:4px; font-family:inherit; font-size:1rem; font-weight:600; color:var(--ink); cursor:pointer;}
   .listen-btn:hover{background:var(--gold); color:#fff;}
   .listen-btn.playing{background:var(--burgundy); border-color:var(--burgundy); color:#fff;}
@@ -470,6 +472,9 @@
             <button onclick="openTopic('bio-beethoven','prima')">Beethoven</button>
           </div>
         </div>
+        <div class="tl-item">
+          <h4><button class="tl-link" onclick="openTopic('topic-romanticismo','prima')">Romanticismo</button><button class="quiz-tag" onclick="openQuiz('romanticismo','prima')">quiz</button></h4>
+        </div>
       </div>
     </div>
   </div>
@@ -535,6 +540,9 @@
             <button onclick="openTopic('bio-mozart','seconda')">Mozart</button>
             <button onclick="openTopic('bio-beethoven','seconda')">Beethoven</button>
           </div>
+        </div>
+        <div class="tl-item">
+          <h4><button class="tl-link" onclick="openTopic('topic-romanticismo-2','seconda')">Romanticismo</button><button class="quiz-tag" onclick="openQuiz('romanticismo','seconda')">quiz</button></h4>
         </div>
       </div>
     </div>
@@ -602,6 +610,9 @@
             <button onclick="openTopic('bio-mozart-3','terza')">Mozart</button>
             <button onclick="openTopic('bio-beethoven','terza')">Beethoven</button>
           </div>
+        </div>
+        <div class="tl-item">
+          <h4><button class="tl-link" onclick="openTopic('topic-romanticismo-3','terza')">Romanticismo</button><button class="quiz-tag" onclick="openQuiz('romanticismo','terza')">quiz</button></h4>
         </div>
       </div>
     </div>
@@ -674,6 +685,7 @@
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-rinascimento-facile','riassunti')">Il Rinascimento</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-barocco-facile','riassunti')">Il Barocco</button><button class="quiz-tag" onclick="openQuiz('barocco','riassunti')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-classicismo-facile','riassunti')">Il Classicismo</button><button class="quiz-tag" onclick="openQuiz('classicismo','riassunti')">quiz</button></h4></div>
+        <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-romanticismo-facile','riassunti')">Il Romanticismo</button><button class="quiz-tag" onclick="openQuiz('romanticismo','riassunti')">quiz</button></h4></div>
       </div>
     </div>
   </div>
@@ -1084,6 +1096,42 @@
     <h3>Il nuovo ruolo del musicista</h3>
     <p>La borghesia favorisce la diffusione del pianoforte, strumento versatile e adatto alla musica domestica, e dell'editoria musicale, che permette la vendita degli spartiti. Nascono i concerti pubblici a pagamento e si sviluppa il dilettantismo musicale, soprattutto in ambito familiare.</p>
     <p>La figura del musicista cambia: il compositore non è più un artigiano al servizio di una corte, ma un libero professionista. I protagonisti di questa trasformazione sono Haydn, Mozart e Beethoven, riuniti nella cosiddetta Scuola di Vienna, un modello fondamentale per tutta la musica successiva.</p>
+  </div></div>
+</section>
+
+<section id="view-topic-romanticismo" class="view class-page">
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-hero" style="border-color:var(--rose);"><h2>Romanticismo</h2></div>
+  <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
+  <div class="sections"><div class="article-body">
+    <h2 class="paragrafo">Un movimento, tanti popoli</h2>
+    <p>Nell'Ottocento nasce in Europa un grande movimento culturale: il Romanticismo. La sua idea principale è semplice: ogni popolo ha le sue radici, e deve esserne orgoglioso. Tedeschi, italiani, francesi, russi, norvegesi, spagnoli: ognuno cerca il proprio modo di essere romantico. Per questo sarebbe più giusto parlare di romanticismi, al plurale.</p>
+    <p>Prima non era così. Il piccolo Mozart viaggiava in carrozza per tutta l'Europa e ovunque capivano la sua musica, perché si parlava una specie di lingua musicale comune. I romantici, invece, vogliono sottolineare le differenze.</p>
+    <p>È anche un movimento molto lungo: comincia verso il 1800 e dura più di cent'anni. Il compositore Richard Strauss, morto nel 1949, si sentiva ancora un romantico!</p>
+    <h2 class="paragrafo">Una parola che viene da lontano</h2>
+    <p>«Romantico» viene da Roma, attraverso le lingue romanze: italiano, francese, spagnolo, cioè le lingue nate dal latino durante il Medioevo. Proprio in quei secoli sono nate anche le nazioni europee. All'inizio, quindi, «romantico» voleva dire «innamorato delle proprie origini». Niente a che vedere con i fidanzatini!</p>
+    <p>Per questo i romantici adorano il Medioevo, i castelli, i cavalieri, le leggende. I fratelli Grimm girano per i villaggi della Germania ad ascoltare le fiabe che la gente si tramanda da secoli e le mettono per iscritto: così sono arrivate fino a noi Cappuccetto Rosso, Hänsel e Gretel, Biancaneve. Ogni popolo va a caccia dei suoi eroi: i tedeschi riscoprono Thor e gli dèi del Nord, gli scozzesi si appassionano ai canti di un antico poeta-cantastorie, Ossian, che in realtà non è mai esistito!</p>
+    <h2 class="paragrafo">Che cosa cambia nella musica</h2>
+    <h3>Si riscopre il passato</h3>
+    <p>Prima, a teatro e ai concerti, si ascoltava solo musica nuova. I romantici, invece, vanno a ripescare i capolavori dimenticati. Nel 1829 un ragazzo di vent'anni, Felix Mendelssohn, fa eseguire a Berlino una grande opera di Bach che nessuno suonava da un secolo: è un successo enorme. Nasce così la storia della musica, la materia che stiamo studiando!</p>
+    <p>Da allora i brani antichi entrano stabilmente nei concerti. Oggi, anzi, quasi tutta la musica che si ascolta in una sala da concerto è stata scritta tanto tempo fa.</p>
+    <p>Anche i compositori si ispirano alle storie antiche. Il tedesco Wagner porta sul palcoscenico i miti nordici di dèi, draghi e anelli magici: le stesse leggende che, molti anni dopo, hanno ispirato Il Signore degli Anelli.</p>
+    <h3>La musica, regina delle arti</h3>
+    <p>Fino ad allora la musica era considerata l'ultima delle arti: bella, sì, ma non si capisce mai bene che cosa voglia dire. Per i romantici diventa invece l'arte più alta, proprio perché sa dire quello che le parole non riescono a esprimere: i sentimenti più profondi.</p>
+    <h3>L'artista ribelle</h3>
+    <p>Il compositore racconta le proprie emozioni ed è un ribelle, un eroe solitario contro tutti. Molti musicisti romantici hanno vite disordinate, piene di amori infelici e stravaganze: pensiamo a Schubert, a Liszt o al violinista Paganini, così bravo che qualcuno lo credeva in combutta con il diavolo. Non lavorano più per un principe: vendono la loro musica, organizzano concerti, danno lezioni. Schumann scriveva anche articoli sui giornali.</p>
+    <p>Amano la natura selvaggia: boschi, montagne, tempeste. Davanti a lei l'uomo si sente piccolo, e la tempesta somiglia alle emozioni che porta dentro.</p>
+    <h3>Il pianoforte e i conservatori</h3>
+    <p>Nelle case delle famiglie benestanti c'è sempre un pianoforte: è lo strumento simbolo dell'Ottocento. Ci si ritrova in salotto per suonare e ascoltare musica.</p>
+    <p>Nel 1795 apre a Parigi il primo conservatorio, una scuola pubblica di musica. Poco dopo ne nascono altri, anche a Bologna, Milano e Napoli.</p>
+    <h3>Le danze del popolo</h3>
+    <p>I compositori si ispirano ai canti e ai balli tradizionali del loro Paese. Chopin, lontano dalla sua Polonia, scrive moltissime mazurche e polacche, le danze della sua terra; Brahms compone le Danze ungheresi.</p>
+    <h3>Musica nuova, strumenti nuovi</h3>
+    <p>I romantici amano sperimentare e non seguono più schemi fissi. Preferiscono brani brevi, come il notturno o il Lied (una canzone tedesca), e spesso usano la musica per raccontare una storia.</p>
+    <p>Anche l'orchestra cresce. Trombe e corni ricevono i pistoni, che permettono finalmente di suonare tutte le note; flauti e oboi si arricchiscono di nuove chiavi. Nascono perfino strumenti mai visti prima: il più famoso è il sassofono, fatto di metallo ma con l'ancia del clarinetto.</p>
+    <h2 class="paragrafo">Passato e futuro</h2>
+    <p>Il Romanticismo sembra un controsenso: guarda al passato, ma per inventare cose nuove. Ama le tradizioni eppure cerca sempre di cambiare.</p>
+    <p>La prossima volta conosceremo da vicino tre romantici tedeschi: Schubert, Mendelssohn e Schumann.</p>
   </div></div>
 </section>
 
@@ -2380,6 +2428,61 @@
   </div></div>
 </section>
 
+<section id="view-topic-romanticismo-2" class="view class-page">
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-hero" style="border-color:var(--rose);"><h2>Romanticismo</h2></div>
+  <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
+  <div class="sections"><div class="article-body">
+    <h2 class="paragrafo">Romanticismo o romanticismi?</h2>
+    <h3>Tanti popoli, tante voci</h3>
+    <p>Più che di «Romanticismo» al singolare, bisognerebbe parlare di romanticismi. Il movimento nasce infatti dal desiderio di riscoprire le proprie radici: sentirsi tedeschi, italiani, francesi, inglesi, russi, spagnoli. È il principio del nazionalismo, cioè l'orgoglio per ciò che rende diversa ogni cultura.</p>
+    <p>Finora abbiamo parlato quasi solo di Germania, Italia e Francia, mentre Inghilterra e Spagna sono rimaste un po' in disparte. Nell'Ottocento, invece, entrano in scena nuovi protagonisti: le scuole nazionali. Russi, norvegesi, finlandesi (mai sentiti prima!), inglesi, spagnoli e perfino americani rivendicano un modo tutto loro di essere romantici.</p>
+    <p>Prima accadeva l'opposto. Nel Classicismo la musica era una lingua comune: il piccolo Mozart girava l'Europa (Italia, Francia, Inghilterra, Olanda) e ovunque lo capivano. Era il sogno illuminista della fraternità, una delle tre parole del motto della Rivoluzione francese: libertà, uguaglianza, fraternità. I romantici lo mettono da parte e rispondono: siamo diversi perché diverse sono le nostre radici.</p>
+    <h3>Una lunga stagione</h3>
+    <p>Se il Classicismo dura appena una cinquantina d'anni, il Romanticismo si estende per oltre un secolo: comincia tra fine Settecento e inizio Ottocento e arriva fin dentro il Novecento. Richard Strauss, morto nel 1949, non ha mai smesso di sentirsi un romantico. Per questo gli storici distinguono un primo, un medio e un tardo Romanticismo. Ogni volta che sentiamo questa parola, dunque, conviene chiedersi: dove? E quando?</p>
+    <h3>Da dove viene la parola</h3>
+    <p>«Romantico» deriva da Roma. Strano, visto che il movimento nasce nella piovosa Germania! Il collegamento passa attraverso le lingue romanze (o neolatine), quelle figlie del latino, la lingua di Roma. Sono nate dopo il V secolo, quando la cultura latina si è mescolata con quella dei popoli barbari. Insieme al francese, allo spagnolo e all'italiano prendono forma anche le nazioni europee: Francia, Spagna, Italia. In origine, dunque, «romantico» indicava l'interesse per quell'epoca lontana, l'epoca delle proprie origini. Era un simbolo di identità.</p>
+    <p>Col tempo, la parola che indicava questo piccolo pezzo ha finito per indicare l'intero movimento culturale dell'Ottocento. Attenzione, però: in storia «romantico» non ha niente a che fare con le cene a lume di candela!</p>
+    <h3>Il ritorno del Medioevo</h3>
+    <p>Gli illuministi giudicavano il Medioevo un'età buia, piena di superstizioni e dominata dalla Chiesa. I romantici lo adorano, perché lì affondano le loro radici. A dire il vero, il Medioevo che raccontano è in buona parte inventato, ma l'entusiasmo è sincero.</p>
+    <p>Nasce così l'interesse per il folklore, cioè il sapere del popolo. I fratelli Grimm girano per i villaggi tedeschi ad ascoltare le fiabe raccontate dalla gente e le mettono per iscritto: da lì arrivano Cappuccetto Rosso, Hänsel e Gretel, Biancaneve. Ogni nazione va in cerca dei propri miti: i tedeschi riscoprono gli dèi nordici come Thor; in Scozia spuntano i canti di Ossian, un bardo (antico poeta e cantastorie celtico) in realtà mai esistito, che inaugura una moda destinata a durare fino a film come Highlander; in Italia Manzoni scrive l'Adelchi, ambientato all'epoca dei Longobardi. Ciascuno coltiva il proprio orticello.</p>
+    <h2 class="paragrafo">Che cosa cambia nella musica</h2>
+    <h3>Nasce la storia della musica</h3>
+    <p>Proprio per ricostruire le proprie radici, nell'Ottocento nasce la storia della musica (e senza di lei non saremmo qui a parlarne!). Prima nessuno badava al passato: a teatro si ascoltavano solo brani appena composti, e tutto il resto finiva nel dimenticatoio. I romantici, invece, vanno a ripescare le opere antiche.</p>
+    <p>Il caso più famoso è quello di Bach, ormai trascurato da quasi tutti. Nel 1829 un ragazzo di vent'anni, Felix Mendelssohn, dirige a Berlino la sua Passione secondo Matteo, che nessuno eseguiva da un secolo: è un trionfo. Da quel momento Bach diventa il simbolo della musica tedesca, e un'apposita società si impegna a pubblicarne tutte le composizioni. Lo stesso accade con Händel.</p>
+    <p>Anche i nuovi lavori guardano indietro. Wagner, per esempio, porta in scena i miti nordici, gli stessi che hanno ispirato il Signore degli Anelli, e le leggende dei cavalieri medievali.</p>
+    <p>Nei concerti, accanto alle novità, si suonano sempre più spesso brani del passato: prima pochi, poi sempre di più. Oggi la situazione si è capovolta: forse il 95% della musica che ascoltiamo in sala da concerto è antica, e solo il 5% contemporanea. Tutto è cominciato con i romantici.</p>
+    <h3>La regina delle arti</h3>
+    <p>Per gli illuministi, amanti della ragione e della concretezza, la musica era l'ultima delle arti: emoziona, ma non si capisce mai bene che cosa voglia dire. Molto meglio la poesia, che ragiona con le parole, la pittura, che mostra la realtà, o l'architettura, solida come la pietra. La musica andava bene, sì, ma soprattutto per accompagnare un testo.</p>
+    <p>I romantici, stanchi di affidarsi sempre alla ragione, ribaltano la classifica. Proprio perché sfugge alle parole, la musica sa esprimere ciò che non si può dire: i sentimenti più profondi, l'infinito. Dove poesia e pittura si fermano, lei va oltre. Diventa così la prima delle arti.</p>
+    <h3>L'artista al centro</h3>
+    <p>Il compositore ora racconta le proprie emozioni, non quelle di un personaggio. Monteverdi dava voce ai sentimenti di Orfeo o di Arianna; nel Barocco gli stati d'animo si rappresentavano quasi per gioco, come attori sul palco. Il musicista romantico, invece, parla di sé. Lo stesso accade in pittura: in un ritratto dell'Ottocento, negli occhi della persona dipinta possiamo leggere l'anima del pittore.</p>
+    <h3>L'eroe romantico</h3>
+    <p>L'artista romantico è un eroe solitario, uno contro tutti. Ama infrangere le regole, e se non ha nemici se li inventa. Nasce così il mito del genio sregolato: Schubert, Liszt, Paganini conducono vite disordinate, tra amori tormentati, alcol e stravaganze. È l'immagine dell'artista che abbiamo ancora oggi.</p>
+    <p>Non a caso uno dei temi preferiti è il viaggiatore errante, che vaga in cerca di se stesso. Spesso cammina in una natura selvaggia e tempestosa, davanti alla quale l'uomo si sente piccolissimo e la ragione non serve a nulla. Quella tempesta, però, è anche dentro di lui: rappresenta la forza delle emozioni. Il primo Romanticismo si chiama appunto Sturm und Drang, «tempesta e impeto».</p>
+    <h3>Un musicista indipendente</h3>
+    <p>Il musicista non è più al servizio di un principe: lavora in proprio. Vende le sue partiture agli editori, organizza concerti a pagamento, insegna nelle case dei ricchi. Spesso è un virtuoso, ma può essere anche direttore d'orchestra, organizzatore di eventi o critico musicale, come Schumann. Una vita frenetica, sempre in bilico tra genio e follia.</p>
+    <h3>Salotti, pianoforti e conservatori</h3>
+    <p>Oltre al teatro, la musica entra nei salotti delle famiglie borghesi, dove si suona soprattutto musica da camera. Lì non manca mai il pianoforte, lo strumento simbolo dell'Ottocento: una piccola orchestra su cui si può suonare di tutto, e anche un segno di benessere.</p>
+    <p>Nel 1795 apre a Parigi il primo conservatorio moderno, una scuola pubblica di musica. Presto ne nascono altri: Bologna (1804), Milano (1807), Napoli (1808), poi Praga, Vienna, Varsavia, Bruxelles. I conservatori dell'epoca barocca, invece, erano istituti di carità che ospitavano orfani e insegnavano loro anche la musica, come l'Ospedale della Pietà di Venezia, dove lavorava Vivaldi.</p>
+    <h3>La musica del popolo</h3>
+    <p>Le danze e i canti tradizionali diventano un tesoro da valorizzare, perché fanno parte delle radici di ogni nazione. Chopin compone decine di mazurche e polacche, le danze della sua Polonia; Brahms scrive le Danze ungheresi; i russi si ispirano alle melodie e alle leggende popolari.</p>
+    <h3>Si cambiano le regole</h3>
+    <p>Il poeta Machado ha scritto: «il cammino si fa camminando». Il compositore romantico la pensa così: niente strade già tracciate, ognuno apre la propria. La musica diventa un laboratorio di esperimenti. Ecco le principali novità.</p>
+    <p><strong>Forma. </strong>Gli schemi fissi del Classicismo, come la forma-sonata, vengono abbandonati: ciascuno inventa la struttura che preferisce. Il brano classico era equilibrato, come un arco che parte e torna al punto di quiete; quello romantico accumula tensione fino a un culmine drammatico, che spesso si spezza all'improvviso. Al posto delle grandi sinfonie si amano i pezzi brevi: il Lied (canzone tedesca), il notturno, l'improvviso, la mazurca, la ballata. Si diffonde anche la musica a programma, che racconta in suoni una storia o descrive un quadro.</p>
+    <p><strong>Armonia. </strong>Gli accordi si fanno più audaci e dissonanti, cioè «tesi». A volte la tensione non si scioglie subito e l'ascoltatore resta col fiato sospeso.</p>
+    <p><strong>Melodia. </strong>Spesso si spezza in brevi motivi che scompaiono e poi tornano, come personaggi di un racconto: è il Leitmotiv, il «motivo conduttore».</p>
+    <p><strong>Ritmo e tempo. </strong>Il ritmo si complica, e l'esecutore ha più libertà: può rallentare, accelerare, «rubare» il tempo per esprimersi meglio. La musica classica era molto più regolare, quasi a metronomo.</p>
+    <p><strong>Strumenti. </strong>L'orchestra si allarga e si riempie di strumenti nuovi o migliorati. È la rivincita dei fiati: flauti e oboi ricevono nuove chiavi, trombe e corni i pistoni, che permettono finalmente di suonare tutte le note. Al tempo di Beethoven, infatti, gli ottoni ne avevano a disposizione pochissime. Nascono anche strumenti inediti: al museo degli strumenti musicali di Bruxelles se ne vedono alcuni che sembrano usciti da un film di fantascienza. Molti sono stati presto dimenticati; altri sono destinati a durare, come il sassofono: metà ottone e metà legno, con il corpo di metallo e l'ancia del clarinetto.</p>
+    <h2 class="paragrafo">Un movimento pieno di contraddizioni</h2>
+    <h3>Passato e futuro</h3>
+    <p>Il Romanticismo guarda al passato, e potrebbe sembrare un'epoca nostalgica, rivolta all'indietro. In realtà usa le antiche radici per inventare il futuro: ama le tradizioni eppure cerca sempre il nuovo.</p>
+    <h3>Musica pura o musica che racconta?</h3>
+    <p>I romantici sostengono che la musica sia preziosa proprio perché non descrive la realtà: la chiamano musica assoluta. Poi, però, la usano per raccontare storie e paesaggi con la musica a programma. Come si spiega? Semplice: il romantico segue l'istinto e non si preoccupa troppo di essere coerente.</p>
+    <p>La prossima volta conosceremo i romantici tedeschi: Schubert, Mendelssohn e Schumann.</p>
+  </div></div>
+</section>
+
 <!-- ================= VIVALDI (Seconda) — riusa la pagina condivisa ================= -->
 
 <!-- ================= HÄNDEL (Seconda) ================= -->
@@ -2632,6 +2735,70 @@
     <p>Sempre in ambito musicale, il Terzo Stato è causa di altri importanti cambiamenti. La borghesia – attenta al portafoglio – non mantiene costose orchestre stabili, ma preferisce eseguire la musica in autonomia grazie a due novità dell'epoca: il <strong>pianoforte</strong>, considerato un'orchestra in miniatura, e parallelamente l'<strong>editoria musicale</strong>. Con la vendita degli spartiti si sviluppa in ambito pubblico il concerto strumentale a pagamento (nel barocco era appannaggio, cioè riservato all'opera lirica) e in ambito privato il dilettantismo musicale: in questo contesto, molte donne imparano a suonare il pianoforte come segno di cultura e raffinatezza, qualità apprezzate nei matrimoni borghesi.</p>
     <p>Per queste ragioni, scompare gradualmente la musica di corte e con essa la figura del compositore-artigiano al servizio di un sovrano. Il musicista diventa un libero professionista, non più stipendiato stabilmente, ma pagato all'occorrenza per il lavoro che produce dalla nuova figura dell'editore. I grandi nomi che incarnano e rendono evidente questa trasformazione sono <strong>Franz Joseph Haydn</strong>, <strong>Wolfgang Amadeus Mozart</strong> e, soprattutto, <strong>Ludwig van Beethoven</strong> (quest'ultimo già pienamente libero professionista). Essi costituiscono la cosiddetta <strong>Scuola di Vienna</strong> dove per "scuola" non si intende un edificio con banchi ed aule, ma tre grandi nomi dell'epoca il cui quartier generale è stata la città di Vienna e la cui bravura ha "fatto scuola", diventa cioè un modello, per le generazioni successive.</p>
     <div class="map-embed"><iframe src="https://drive.google.com/file/d/1V2VocMFc1D7LCgYNMLxdTWl_RQ2JW_QX/preview" loading="lazy" allowfullscreen title="Classicismo musicale"></iframe></div>
+  </div></div>
+</section>
+
+<section id="view-topic-romanticismo-3" class="view class-page">
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-hero" style="border-color:var(--rose);"><h2>Romanticismo</h2></div>
+  <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
+  <div class="sections"><div class="article-body">
+    <h2 class="paragrafo">Romanticismo o romanticismi?</h2>
+    <p>Il Romanticismo l'avete studiato a scuola dal punto di vista letterario e artistico. Ricapitoliamone i punti di forza.</p>
+    <h3>Romanticismo nello spazio: la diversità delle nazioni</h3>
+    <p>Già dire «il Romanticismo» è un errore. La sua prima istanza è la rivalutazione delle proprie radici nazionali: il proprio essere tedeschi, italiani, francesi, inglesi, russi, spagnoli. Il Romanticismo nasce sul principio del nazionalismo, cioè della differenza tra culture. Per questo dovremmo parlare di romanticismi, tanti quante sono le sue declinazioni in Europa e non più di una corrente legata al solito centro dell'Europa che è stato protagonista delle nostre storie.</p>
+    <p>Pensateci: in questi due anni di storia della musica abbiamo parlato soprattutto di Germania, Italia e Francia. L'Inghilterra e la Spagna sono rimaste un po' al traino. Nell'Ottocento sorgono invece nuove realtà musicali, con piena dignità e autorevolezza: le scuole nazionali. Russi, norvegesi, finlandesi (dove li avevamo mai visti?), inglesi, spagnoli, un poco anche gli americani. Ciascuno rivendica il proprio modo di essere romantico.</p>
+    <p>Lo stile precedente, il Classicismo, si basava sul principio opposto: il cosmopolitismo. Mozart viaggiava per l'Europa (Italia, Francia, Inghilterra, Olanda) e tutti lo capivano, perché il linguaggio classico era comune, transnazionale. L'Europa centro-meridionale era una grande comunità che parlava, bene o male, la stessa lingua musicale.</p>
+    <p>Il Romanticismo rompe questo sogno illuminista di fraternità, una delle tre parole del motto rivoluzionario (libertà, uguaglianza e fraternità), e si fonda sulla rivendicazione della diversità: siamo diversi perché le nostre radici sono diverse.</p>
+    <h3>Nel tempo: le fasi</h3>
+    <p>I romanticismi non si distinguono solo nello spazio, ma anche nel tempo. Il Classicismo dura una cinquantina d'anni, a voler abbondare: con Beethoven ne siamo già fuori. Il Romanticismo invece nasce tra fine Settecento e inizio Ottocento, con lo Sturm und Drang, e arriva ben dentro il Novecento. Richard Strauss muore nel 1949 senza aver mai rinnegato il suo essere romantico. Sono almeno centotrent'anni, molto densi.</p>
+    <p>Quindi non abbiamo solo un Romanticismo francese o italiano, ma anche un primo Romanticismo, un Romanticismo centrale e un tardo Romanticismo. Quando diciamo «Romanticismo» dobbiamo pensare a un nome collettivo, a una pluralità, e chiederci ogni volta: in Germania o in Italia? Nel primo o nel tardo?</p>
+    <h3>Da dove viene la parola</h3>
+    <p>Da che cosa deriva «romantico»? Dal nome di Roma. Ma se il movimento nasce nel nord Europa, nelle regioni piovose dell'attuale Germania, che cosa c'entra Roma?</p>
+    <p>La spiegazione sta in un'altra parola: «romanzo», inteso come nelle lingue romanze, cioè quelle che derivano dalla "parlata di Roma", ovvero il latino, dette per questo anche neolatine. Sono le lingue nate quando la cultura latina si fonde con quella portata dai popoli cosiddetti barbari, dal V secolo in poi, nei regni romano-barbarici. Da quei regni nasceranno le nazioni europee: con la nascita del francese, del tedesco, dello spagnolo, dell'italiano, si formano le entità che chiamiamo Francia, Germania, Spagna, Italia (che prima era la Longobardia).</p>
+    <p>«Romantico» indica dunque la rivalutazione di quel periodo, più che nodale, fondativo, in cui nascono le lingue e, con esse, le nazioni europee. Il significato originario della parola romanticismo era quindi la rivalutazione di quell'epoca, l'epoca delle proprie origini. Insomma un simbolo identitario.</p>
+    <h3>Il Medioevo rivalutato</h3>
+    <p>Poiché, come abbiamo appena visto, le origini dell'Europa stanno nel Medioevo, questo provoca un ribaltamento. Gli illuministi, razionalisti, consideravano il Medioevo il regno dell'oscurantismo, della superstizione e del potere della Chiesa. I romantici sono invece pro-Medioevo, perché in quell'oscurità e in quella religiosità trovano le proprie radici. Attenzione però: il loro Medioevo (quello raccontato dai romantici) ha poco a che vedere con quello storico: se lo inventano, ma almeno ci provano.</p>
+    <p>Da qui la ricerca del folklore, letteralmente sapere del popolo. Pensiamo ai fratelli Grimm che vanno a raccogliere le fiabe tra la gente: il sapere del popolo. La ricerca delle fiabe e del canto popolare sta alla base del Romanticismo, e ciascuno cerca i propri miti. I tedeschi vanno a cercare Thor. Gli scozzesi si inventano un bardo (antico poeta, cantastorie e musicista presso i popoli celtici), Ossian, da cui nasce l'ossianesimo, con la ricerca dei miti celtici e scozzesi da cui deriveranno pietre miliari della cultura pop del Novecento come Highlander, e gli italiani fanno lo stesso (pensate a Manzoni e all'Adelchi). Ciascuno rivaluta il proprio orticello.</p>
+    <h3>Una parola che cambia significato</h3>
+    <p>Poi, per sineddoche (la figura retorica in cui una parte indica il tutto, come «tetto» per «casa» o «vela» per «nave»), la parola che indicava solo la rivalutazione di quell'epoca è passata a indicare l'intero edificio culturale che oggi sintetizziamo con l'aggettivo romantico (in senso storico, che non ha nulla a che fare con la parola d'uso comune, legata al sentimentalismo dell'innamoramento).</p>
+    <h2 class="paragrafo">Le conseguenze in musica</h2>
+    <p>Tutto questo ha ripercussioni in ambito musicale? Assolutamente sì. E se ne aggiungono altre.</p>
+    <h3>Nasce la storia della musica</h3>
+    <p>Partiamo dalla rivalutazione delle radici. Tra fine Settecento e primo Ottocento nasce la storia della musica (per vostra sfortuna, altrimenti non saremmo qui a parlarne). Nasce perché c'è bisogno di ricostruire le proprie radici anche musicali. Prima il passato non interessava a nessuno: si andava a teatro e all'opera ad ascoltare musica appena composta. Esisteva la musica del presente, e il resto era passato, indistinto. Col Romanticismo invece nasce l'esigenza di ricostruire il passato e di recuperarne le opere. Il caso più significativo è la riscoperta di Bach, che prima non interessava a nessuno. Viene riscoperto come musicista tipicamente tedesco e luterano, che incarna la vera identità musicale tedesca. Nasce la Bach-Gesellschaft, che si propone per la prima volta di pubblicare sistematicamente tutte le opere di Bach (su questa base si costruirà il catalogo BWV). Nasce con lo stesso obiettivo la Händel-Gesellschaft.</p>
+    <p>Molte composizioni riprendono a loro volta il passato: Wagner riprende i miti nordici (che voi conoscerete forse grazie al Signore degli Anelli). Accanto ai miti, si rivolge anche al Medioevo: ad esempio con Lohengrin e Tannhäuser.</p>
+    <p>In pratica, questa opera di rivalutazione porta nell'Ottocento alla nascita del repertorio. I romantici amano tanto la musica del passato da ritenerla, in certi casi, di pari dignità rispetto a quella dei contemporanei. Nei concerti, accanto alle novità, si cominciano a eseguire composizioni antiche: prima timidamente, poi sempre di più, fino a ribaltare il rapporto. Oggi viviamo la situazione opposta: forse il 95% della musica che si ascolta in concerto è antica e il 5% è di oggi. Questa inversione comincia proprio nel primo Ottocento.</p>
+    <h3>La musica al primo posto tra le arti</h3>
+    <p>Nella graduatoria illuminista delle arti, la musica era all'ultimo posto. Gli illuministi sono razionalisti e concreti, e la musica non è concreta: la sentiamo, ma non si lascia intrappolare in un significato preciso. Per argomentare servono la parola e la poesia, e la pittura racconta la realtà com'è. L'arte migliore è l'architettura, che si basa sul calcolo e sulla concretezza della pietra posata a terra. La musica va bene, dicevano, ma meglio se accompagna una parola. La musica dice qualcosa e non si capisce esattamente che cosa. Quindi è un'arte degna, ma all'ultimo posto.</p>
+    <p>I romantici, tendenzialmente anti-illuministi, sono stanchi di questo culto della ragione: anche l'irrazionale ha un perché, e l'idea che le cose non si capiscano fino in fondo è affascinante. La musica, proprio per la sua indeterminatezza, balza al primo posto e diventa l'arte più rappresentativa della cultura romantica, più in alto della letteratura, grazie alla sua capacità di esprimere lo stato d'animo dell'autore senza bisogno del filtro delle parole. Mentre le altre arti restano legate al concreto e al finito, la musica arriva dove parola e immagine si fermano: afferra l'inafferrabile; coglie l'infinito.</p>
+    <h3>L'autore al centro</h3>
+    <p>L'autore diventa il protagonista della vita musicale, portatore di emozioni sue e non di altri. Ricordate la teoria degli affetti: anche Monteverdi voleva esprimere gli affetti, ma erano quelli di Arianna, di Orfeo. Nel Romanticismo il sentimento non passa più per interposta persona: è del sé.</p>
+    <p>La differenza ricorda quella tra impressionismo ed espressionismo in pittura, anche se il paragone va preso con cautela. Paradossalmente, entrambe le correnti mettono al centro l'artista: l'impressionismo è l'esterno visto dall'artista, l'espressionismo è l'interiorità che esce da lui. Il Romanticismo è molto espressionista. Anche in pittura funziona così. Un pittore dell'Ottocento che ritrae una donna o un uomo sta esprimendo se stesso, e negli occhi del soggetto vediamo l'anima del pittore, in un gioco di specchi. Paesaggi, figure, scene sono ogni volta l'occasione per consegnarci un pezzetto della propria interiorità. E lo stesso vale per la musica.</p>
+    <p>Anche il Barocco aspira a rappresentare stati d'animo, ma il Barocco lo fa senza coinvolgimento, per finzione, come in un gioco.</p>
+    <h3>L'eroe romantico</h3>
+    <p>L'Ottocento si apre all'insegna dell'eroe. L'eroe romantico è un individualista, uno contro tutti; se i nemici non ci sono, l'artista romantico se li inventa, perché ne ha bisogno per esercitare al meglio la propria arte. Deve rompere le scatole e rompere gli schemi, le convenzioni, le regole. Prende così forma l'idea, tipicamente romantica, del binomio genio e sregolatezza. Schubert, Liszt, Paganini: gente spesso disordinata, a volte dedita all'alcol o alle droghe, con amori tormentati e vite libere. È l'immagine dell'artista che abbiamo ancora oggi. Non è quindi un caso se uno dei temi di questo periodo storico-culturale è quello del viaggiatore errante, protagonista di un percorso che in una "foresta di sentimenti" vaga in cerca della propria identità. E questa metaforica foresta rappresenta un altro importante tema romantico: la natura selvaggia, impervia e talvolta distruttiva che, al contrario del razionalismo illuminista, ricorda all'uomo la sua insignificanza. La sua ragione, di fronte all'impeto della natura, non può nulla. E l'impeto della natura altro non è che l'impeto delle emozioni. Ecco perché la prima fase del Romanticismo, Sturm und Drang (lett. tempesta e impeto), prende questo nome.</p>
+    <h3>Il musicista libero professionista</h3>
+    <p>Per le stesse ragioni di individualismo accennate nel paragrafo precedente, cambia anche la condizione sociale del musicista, che diventa un artista indipendente, un libero professionista. Vende i propri spartiti agli editori, organizza concerti pubblici a pagamento, dà lezioni nelle famiglie abbienti. È una figura poliedrica e dinamica, sempre in bilico tra genio e follia: spesso virtuoso, esecutore ma anche direttore, organizzatore di eventi, a volte saggista o critico musicale, come nel caso di Schumann.</p>
+    <h3>Il salotto, il pianoforte, i conservatori</h3>
+    <p>Accanto al teatro, il salotto borghese diventa un luogo importante per l'ascolto della musica, e il luogo privilegiato per la musica da camera. Nel salotto il pianoforte è sempre presente e diventa lo strumento simbolo dell'Ottocento, lo strumento romantico per eccellenza. Lo è in due sensi: come orchestra in miniatura, su cui si suona di tutto, e come simbolo della borghesia.</p>
+    <p>Viene valorizzata anche l'istruzione musicale. Nel 1795 nasce a Parigi un'istituzione pubblica, il Conservatoire National de Musique, che diventa presto il modello per i nuovi conservatori europei: Bologna (1804), Milano (1807), Napoli (1808), Praga (1811), Vienna (1817), Varsavia (1821), Bruxelles (1832). Sono conservatori nel senso moderno del termine, cioè scuole di musica. Non vanno confusi con i conservatori e gli ospedali dell'epoca barocca, come quelli di Napoli o l'Ospedale della Pietà a Venezia, che erano istituti di carità per orfani e trovatelli dove si insegnava anche la musica.</p>
+    <h3>La musica popolare</h3>
+    <p>Anche la musica popolare acquista molta importanza, e torniamo così alla questione del nazionalismo: la danza tradizionale fa parte della ricostruzione delle radici. Chopin compone moltissime mazurche e polacche, le danze della sua Polonia. Brahms scrive le Danze ungheresi. Lo si nota ancora di più nei compositori russi che usano temi e storie popolari.</p>
+    <h3>Lo sperimentalismo</h3>
+    <p>Anche dal punto di vista della composizione, lo spirito dell'eroe romantico significa rottura degli schemi e delle regole. Il principio è quello della bellissima poesia di Machado: il cammino si fa camminando. Non ci sono strade già tracciate: si creano passandoci sopra. L'artista romantico ha proprio questa idea. Il Romanticismo cerca un rinnovamento continuo, e per questo i suoi percorsi sono spesso imprevedibili e nascono strada facendo, senza un progetto unitario stabilito in partenza.</p>
+    <p>Come dicevamo, se non ci sono strade, bisogna inventarsele: la musica romantica è spesso sperimentale e cerca la novità più che la ripresa di modelli noti. La cerca in tutti i campi della musica:</p>
+    <p><strong>Forma. </strong>Le vecchie forme, che ingabbiano il musicista, vengono abbandonate. Il periodo classico si basava su una forma unitaria, la forma-sonata. Nel Romanticismo non c'è più: ognuno si inventa le forme che vuole. Qualche punto di riferimento resta, ma senza i vincoli di un modello unico. Se la forma classica si basava sull'equilibrio simmetrico, con un tracciato ad arco che torna alla quiete iniziale, la forma romantica accumula progressivamente tensione energetica fino a un culmine drammatico che si interrompe spesso bruscamente; una forma "squilibrata". Al posto delle imponenti sinfonie classiche si preferiscono le forme piccole: il Lied, il notturno, l'improvviso, la mazurca, la ballata, il pezzo caratteristico, la fantasia. Abbonda anche la musica a programma, che è un modo per spostare l'attenzione dalla forma al contenuto. La forma è sentita come un limite, e il compositore la costruisce, appunto, attorno a un programma, che poteva essere una storia o un quadro da "trasporre" in suono.</p>
+    <p><strong>Armonia. </strong>È la polverizzazione della tonalità: cromatismo intenso, accordi dissonanti, modulazioni verso tonalità lontane. Si usa la sospensione armonica: la dissonanza non si risolve subito, e questo crea un senso di attesa emotiva.</p>
+    <p><strong>Melodia. </strong>Anche la melodia, come l'armonia, tende a polverizzarsi. Spesso si frammenta in motivi brevi, che scompaiono e poi ritornano con una certa cadenza a scandire la narrazione musicale. È il principio del Leitmotiv.</p>
+    <p><strong>Ritmo. </strong>Il ritmo non è la parte più innovativa del Romanticismo, ma raggiunge una grande complessità, come sa chi suona il pianoforte: gruppi irregolari, sovrapposizione di movimenti regolari e irregolari. Le danze, poi, portano pattern ritmici diversi dal solito.</p>
+    <p><strong>Agogica. </strong>Cresce la libertà di movimento: rubato, rallentando, accelerazioni improvvise, molto più che nelle epoche precedenti. La musica classica resta più metronomica e scandita, con meno margine di espansione. Quella romantica concede più libertà nello stacco dei tempi e nelle agogiche interne.</p>
+    <p><strong>Timbro e strumenti. </strong>È l'aspetto più caratteristico, strettamente legato all'innovazione organologica. L'orchestra romantica si riempie di strumenti nuovi o perfezionati, e la sua massa cresce enormemente rispetto all'orchestra classica. È la rivincita dei fiati, che arrivano a compimento grazie a una vera ricerca di laboratorio. Flauti e oboi, con il sistema di chiavi, permettono nuovi timbri e nuove musiche. Negli ottoni arrivano pistoni e cilindri, che consentono di suonare tutte le note. Fino a Beethoven compreso, infatti, trombe e corni avevano a disposizione poche note. Nascono poi strumenti di invenzione nuova. Il museo degli strumenti musicali di Bruxelles è bellissimo. Alcuni strumenti sembrano usciti dalla fantasia di uno scrittore di fantascienza, alcuni sono finiti nel dimenticatoio, altri hanno resistito. Tra questi c'è il sassofono, un ibrido tra un ottone e un legno, con il corpo in metallo e l'ancia del clarinetto.</p>
+    <h2 class="paragrafo">Due apparenti contraddizioni</h2>
+    <h3>Passato e futuro</h3>
+    <p>Il Romanticismo è un caso particolare. Rivaluta il passato, e quindi sembrerebbe un'epoca reazionaria, retrospettiva. Ma guarda al passato per fondare e inventare il presente, per creare novità: è un'epoca retrospettiva e insieme molto sperimentale. Due elementi che immagineremmo in contrapposizione, lo sguardo al passato e lo sguardo al futuro, convivono perfettamente.</p>
+    <h3>Musica assoluta e musica a programma</h3>
+    <p>L'altra contraddizione si ricollega a quanto detto sopra: la musica, non essendo un'arte semantica, è quella che meglio descrive ciò che sta al di là della realtà, e lo esprime in termini assoluti: tra musica e realtà non c'è relazione. È la musica assoluta, il fondamento dell'estetica romantica. Siamo d'accordo? Però c'è un ma. Perché allora ci siamo inventati la musica a programma? Ecco la contraddizione. Prima si dice che la musica non può esprimere la realtà, e si trova proprio in questo il suo valore. Poi ci si contraddice e la si usa per descrivere la realtà. La verità è che il romantico fa semplicemente quello che gli va, senza preoccuparsi di incasellare in schemi coerenti tutto ciò che lo circonda. Per cui anche il dualismo è perfettamente contemplato.</p>
+    <p>La prossima volta parleremo del Romanticismo tedesco, partendo da Schubert, Mendelssohn e Schumann.</p>
   </div></div>
 </section>
 
@@ -2937,6 +3104,42 @@
   </div></div>
 </section>
 
+<section id="view-topic-romanticismo-facile" class="view class-page facile-page">
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-hero" style="border-color:var(--rose);"><h2>Il Romanticismo</h2></div>
+  <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
+  <div class="sections"><div class="article-body facile-body">
+    
+    <p class="facile-line">Il Romanticismo è un periodo della storia della musica.</p>
+<p class="facile-line">Il Romanticismo nasce in Europa, circa nell'anno 1800.</p>
+<p class="facile-line">Il Romanticismo dura più di cento anni.</p>
+<p class="facile-line">Ogni popolo è orgoglioso delle sue radici.</p>
+<p class="facile-line">Ogni popolo cerca il proprio modo di essere romantico.</p>
+<p class="facile-line">La parola romantico viene da Roma.</p>
+<p class="facile-line">I romantici amano il Medioevo.</p>
+<p class="facile-line">I romantici amano i castelli, i cavalieri e le leggende.</p>
+<p class="facile-line">I fratelli Grimm raccolgono le fiabe del popolo.</p>
+<p class="facile-line">Una fiaba famosa è Cappuccetto Rosso.</p>
+<p class="facile-line">Nel Romanticismo si riscopre la musica antica.</p>
+<p class="facile-line">Felix Mendelssohn fa suonare una grande opera di Bach.</p>
+<p class="facile-line">Nel Romanticismo la musica diventa l'arte più importante.</p>
+<p class="facile-line">La musica dice quello che le parole non riescono a dire.</p>
+<p class="facile-line">Il compositore racconta le sue emozioni.</p>
+<p class="facile-line">Il compositore romantico è un ribelle.</p>
+<p class="facile-line">Schubert, Liszt e Paganini sono musicisti romantici.</p>
+<p class="facile-line">Il pianoforte è lo strumento simbolo dell'Ottocento.</p>
+<p class="facile-line">Nel 1795 apre a Parigi il primo conservatorio.</p>
+<p class="facile-line">Il conservatorio è una scuola di musica.</p>
+<p class="facile-line">Chopin scrive le mazurche e le polacche.</p>
+<p class="facile-line">Le mazurche e le polacche sono danze della Polonia.</p>
+<p class="facile-line">Nel Romanticismo l'orchestra diventa più grande.</p>
+<p class="facile-line">Nasce il sassofono.</p>
+<p class="facile-line">Il sassofono è fatto di metallo.</p>
+<p class="facile-line">Il Romanticismo guarda al passato per inventare cose nuove.</p>
+    
+  </div></div>
+</section>
+
 
 <!-- ================= NOMI DELLE NOTE (Riassunti) ================= -->
 <section id="view-topic-note-facile" class="view class-page facile-page">
@@ -3047,7 +3250,7 @@
   var returnTo = 'home';
   function goBack(){ show(returnTo); }
   function show(id){
-    ['home','prima','seconda','terza','trame','riassunti','dettato','escape-opera','quizpage','quiz-igreci','topic-lineadeltempo','topic-lineadeltempo-3','topic-igreci','topic-gregoriano','topic-gregoriano-2','topic-gregoriano-3','topic-polifonia','topic-polifonia-3','topic-polifonia-prima','topic-teorianote','topic-teorianote-2','topic-teorianote-3','topic-classicismo','topic-classicismo-2','topic-classicismo-3','topic-rinascimento-3','topic-barocco-3','topic-lineadeltempo-facile','topic-igreci-facile','topic-gregoriano-facile','topic-polifonia-facile','topic-rinascimento-facile','topic-barocco-facile','topic-classicismo-facile','topic-note-facile','bio-monteverdi','bio-vivaldi','bio-vivaldi-3','bio-handel','bio-handel-2','bio-handel-3','bio-bach','bio-bach-2','bio-bach-3','bio-haydn','bio-mozart','bio-mozart-3','bio-beethoven','subpage'].forEach(function(v){
+    ['home','prima','seconda','terza','trame','riassunti','dettato','escape-opera','quizpage','quiz-igreci','topic-lineadeltempo','topic-lineadeltempo-3','topic-igreci','topic-gregoriano','topic-gregoriano-2','topic-gregoriano-3','topic-polifonia','topic-polifonia-3','topic-polifonia-prima','topic-teorianote','topic-teorianote-2','topic-teorianote-3','topic-classicismo','topic-classicismo-2','topic-classicismo-3','topic-rinascimento-3','topic-barocco-3','topic-lineadeltempo-facile','topic-igreci-facile','topic-gregoriano-facile','topic-polifonia-facile','topic-rinascimento-facile','topic-barocco-facile','topic-classicismo-facile','topic-note-facile','bio-monteverdi','bio-vivaldi','bio-vivaldi-3','bio-handel','bio-handel-2','bio-handel-3','bio-bach','bio-bach-2','bio-bach-3','bio-haydn','bio-mozart','bio-mozart-3','bio-beethoven','subpage','topic-romanticismo','topic-romanticismo-2','topic-romanticismo-3','topic-romanticismo-facile'].forEach(function(v){
       document.getElementById('view-'+v).classList.toggle('active', v===id);
     });
     window.scrollTo(0,0);
@@ -3576,6 +3779,88 @@
         { q:'Cosa succede a Beethoven?', options:['Diventa sordo','Diventa cieco','Diventa muto','Non succede niente'], correct:0 },
         { q:'Sordo vuol dire che una persona:', options:['Non sente più i suoni','Non vede più','Non parla più','Non cammina più'], correct:0 },
         { q:'Anche se è sordo, Beethoven:', options:['Continua a scrivere musica','Smette di scrivere musica','Diventa un pittore','Smette di vivere in Germania'], correct:0 }
+      ]}
+    },
+    romanticismo: {
+      prima: { title:'Quiz — Romanticismo', questions:[
+        { q:'Qual è l\'idea principale del Romanticismo?', options:['Tutti i popoli devono parlare la stessa lingua','La musica deve essere uguale ovunque','Il passato non conta','Ogni popolo ha le sue radici e deve esserne orgoglioso'], correct:3 },
+        { q:'Che cosa faceva il piccolo Mozart?', options:['Viaggiava in carrozza per tutta l\'Europa e ovunque capivano la sua musica','Restava sempre nella sua città','Scriveva solo per un principe','Suonava solo musica antica'], correct:0 },
+        { q:'Quando comincia il Romanticismo e quanto dura?', options:['Comincia verso il 1500 e dura dieci anni','Comincia verso il 1950 e dura un secolo','Comincia verso il 1800 e dura più di cent\'anni','Comincia verso il 1200 e dura cinquant\'anni'], correct:2 },
+        { q:'Quale compositore, morto nel 1949, si sentiva ancora un romantico?', options:['Mozart','Richard Strauss','Chopin','Beethoven'], correct:1 },
+        { q:'Da dove viene la parola «romantico»?', options:['Da Roma, attraverso le lingue romanze','Dalla parola «amore»','Dal nome di un compositore','Dal nome di un castello'], correct:0 },
+        { q:'Che cosa voleva dire all\'inizio «romantico»?', options:['«Innamorato di una persona»','«Amante del lusso»','«Innamorato delle proprie origini»','«Nemico del passato»'], correct:2 },
+        { q:'Che cosa adorano i romantici?', options:['L\'industria e le macchine','L\'antica Grecia','La vita di corte','Il Medioevo, i castelli, i cavalieri, le leggende'], correct:3 },
+        { q:'Che cosa raccolgono i fratelli Grimm?', options:['Le canzoni dei trovatori','Le fiabe che la gente si tramanda da secoli','Le mazurche','Le sinfonie dimenticate'], correct:1 },
+        { q:'Chi era Ossian?', options:['Un violinista scozzese','Un compositore tedesco','Un antico poeta-cantastorie che in realtà non è mai esistito','Un re del Nord'], correct:2 },
+        { q:'Che cosa fa Felix Mendelssohn a Berlino nel 1829, a vent\'anni?', options:['Fa eseguire una grande opera di Bach che nessuno suonava da un secolo','Scrive una sinfonia dedicata a Beethoven','Apre il primo conservatorio','Inventa il sassofono'], correct:0 },
+        { q:'Che cosa nasce con la riscoperta del passato?', options:['Il pianoforte','La storia della musica','Il Lied','La fiaba'], correct:1 },
+        { q:'Che cosa porta sul palcoscenico Wagner?', options:['Le fiabe dei fratelli Grimm','Le leggende scozzesi','Le storie dei Greci','I miti nordici di dèi, draghi e anelli magici'], correct:3 },
+        { q:'Che posto ha la musica, per i romantici, tra le arti?', options:['L\'ultima','La più concreta','L\'arte più alta, perché sa dire ciò che le parole non riescono a esprimere','Pari alla pittura'], correct:2 },
+        { q:'Che cosa racconta il compositore romantico?', options:['Le emozioni del principe','Le proprie emozioni','Solo storie inventate','Le leggi della fisica'], correct:1 },
+        { q:'Perché Paganini era così famoso?', options:['Era un violinista così bravo che qualcuno lo credeva in combutta con il diavolo','Dirigeva il primo conservatorio','Scriveva articoli sui giornali','Suonava l\'organo in chiesa'], correct:0 },
+        { q:'Qual è lo strumento simbolo dell\'Ottocento?', options:['L\'organo','Il liuto','Il flauto dolce','Il pianoforte'], correct:3 },
+        { q:'Dove apre nel 1795 il primo conservatorio?', options:['A Parigi','A Vienna','A Bologna','A Berlino'], correct:0 },
+        { q:'Che cosa scrive Chopin, lontano dalla sua Polonia?', options:['Le Danze ungheresi','Solo opere liriche','Moltissime mazurche e polacche, le danze della sua terra','Canti gregoriani'], correct:2 },
+        { q:'Come è fatto il sassofono?', options:['È tutto di legno','È di metallo, ma con l\'ancia del clarinetto','Ha le corde come il violino','Si suona solo con le percussioni'], correct:1 },
+        { q:'Che cosa fa il Romanticismo con il passato?', options:['Lo cancella del tutto','Lo copia senza cambiare niente','Lo considera inutile','Lo guarda, ma per inventare cose nuove'], correct:3 }
+      ]},
+      seconda: { title:'Quiz — Romanticismo', questions:[
+        { q:'Da quale desiderio nasce il movimento romantico, secondo il testo?', options:['Imitare i compositori classici','Riscoprire le proprie radici','Viaggiare per l\'Europa','Abolire la musica sacra'], correct:1 },
+        { q:'Chi entra in scena nell\'Ottocento, accanto a Germania, Italia e Francia?', options:['Solo i compositori tedeschi','Le corti dei principi','Le orchestre militari','Le scuole nazionali: russi, norvegesi, finlandesi, inglesi, spagnoli e americani'], correct:3 },
+        { q:'Quale di queste parole fa parte del motto della Rivoluzione francese?', options:['Fraternità','Nazionalismo','Romanticismo','Folklore'], correct:0 },
+        { q:'Da che cosa deriva la parola «romantico»?', options:['Dalle cene a lume di candela','Dalla Germania piovosa','Da Roma, attraverso le lingue romanze (o neolatine)','Dal nome di un filosofo'], correct:2 },
+        { q:'Come giudicavano il Medioevo gli illuministi?', options:['Un\'età d\'oro','Un\'epoca di grande scienza','Un periodo senza guerre','Un\'età buia, piena di superstizioni e dominata dalla Chiesa'], correct:3 },
+        { q:'Che cosa fanno i fratelli Grimm?', options:['Compongono sinfonie','Ascoltano le fiabe raccontate dalla gente e le mettono per iscritto','Costruiscono pianoforti','Dirigono orchestre'], correct:1 },
+        { q:'Chi era Ossian?', options:['Un compositore tedesco','Un re scozzese storico','Un bardo celtico in realtà mai esistito','Uno dei fratelli Grimm'], correct:2 },
+        { q:'Che cosa dirige a Berlino Felix Mendelssohn nel 1829?', options:['La Passione secondo Matteo di Bach, che nessuno eseguiva da un secolo','Una sinfonia di Beethoven','Un\'opera di Wagner','Un\'opera di Mozart'], correct:0 },
+        { q:'Che cosa porta in scena Wagner?', options:['Solo opere comiche','I miti nordici e le leggende dei cavalieri medievali','Le fiabe dei fratelli Grimm','Le storie dell\'antica Grecia'], correct:1 },
+        { q:'Quanta musica ascoltiamo oggi in sala da concerto che sia antica, secondo il testo?', options:['Forse il 5%','Circa la metà','Quasi nessuna','Forse il 95%'], correct:3 },
+        { q:'Quale posto occupava la musica per gli illuministi?', options:['L\'ultimo tra le arti','Il primo','Il secondo','Era considerata pari alla poesia'], correct:0 },
+        { q:'Di chi esprime i sentimenti il musicista romantico?', options:['Quelli di un personaggio','Quelli del principe','I propri','Quelli del pubblico'], correct:2 },
+        { q:'Quale immagine di artista nasce con l\'eroe romantico?', options:['L\'artista di corte','L\'artigiano ordinato','Il maestro di cappella','Il genio sregolato'], correct:3 },
+        { q:'Che cosa significa Sturm und Drang?', options:['Ragione e sentimento','Tempesta e impeto','Genio e follia','Notte e giorno'], correct:1 },
+        { q:'Che cosa apre a Parigi nel 1795?', options:['Il primo conservatorio moderno, una scuola pubblica di musica','Il primo teatro d\'opera','La prima orchestra sinfonica','Il primo museo di strumenti'], correct:0 },
+        { q:'Quale compositore fu anche critico musicale?', options:['Chopin','Brahms','Schumann','Wagner'], correct:2 },
+        { q:'Che cos\'è il Lied?', options:['Una danza polacca','Una canzone tedesca','Una sinfonia molto lunga','Una messa cantata'], correct:1 },
+        { q:'Che cos\'è il Leitmotiv?', options:['Un accordo molto dissonante','Un rallentando improvviso','Un tipo di danza popolare','Il «motivo conduttore»: brevi motivi che scompaiono e poi tornano'], correct:3 },
+        { q:'Come viene descritto il sassofono?', options:['Uno strumento a corde','Uno strumento a percussione','Metà ottone e metà legno, con il corpo di metallo e l\'ancia del clarinetto','Uno strumento tutto di legno'], correct:2 },
+        { q:'Che cosa permettono i pistoni a trombe e corni?', options:['Di suonare finalmente tutte le note','Di suonare più piano','Di suonare senza fiato','Di sostituire i violini'], correct:0 }
+      ]},
+      terza: { title:'Quiz — Romanticismo', questions:[
+        { q:'Su quale principio nasce il Romanticismo?', options:['Il nazionalismo, cioè la differenza tra culture','Il cosmopolitismo, cioè l\'unione tra le culture','Il razionalismo illuminista','Il culto dell\'antichità classica'], correct:0 },
+        { q:'Perché, secondo il testo, dovremmo parlare di «romanticismi»?', options:['Perché i compositori romantici erano molto numerosi','Perché il Romanticismo è durato un solo anno','Perché ci sono tante declinazioni del Romanticismo in Europa, non solo quella del centro dell\'Europa','Perché la parola ha molti significati nel dizionario'], correct:2 },
+        { q:'Quali nuove realtà musicali sorgono nell\'Ottocento?', options:['Le scuole di canto gregoriano','Le scuole nazionali (russi, norvegesi, finlandesi, inglesi, spagnoli…)','Le corti dei principi','Le orchestre di corte'], correct:1 },
+        { q:'Su quale principio, opposto a quello romantico, si basava il Classicismo?', options:['Il nazionalismo','Il folklore','Lo sperimentalismo','Il cosmopolitismo'], correct:3 },
+        { q:'Quanto dura il Classicismo, a voler abbondare?', options:['Circa un secolo e mezzo','Una decina d\'anni','Una cinquantina d\'anni','Cinquecento anni'], correct:2 },
+        { q:'Chi muore nel 1949 senza aver mai rinnegato il suo essere romantico?', options:['Richard Strauss','Ludwig van Beethoven','Franz Schubert','Richard Wagner'], correct:0 },
+        { q:'Da che cosa deriva la parola «romantico»?', options:['Dal sentimentalismo dell\'innamoramento','Dal nome di un compositore','Dalla parola greca per «sogno»','Dal nome di Roma, attraverso le lingue romanze'], correct:3 },
+        { q:'Come consideravano il Medioevo gli illuministi?', options:['L\'epoca d\'oro della ragione','Il regno dell\'oscurantismo, della superstizione e del potere della Chiesa','Il periodo più colto della storia','Un\'epoca senza religione'], correct:1 },
+        { q:'Che cosa significa letteralmente «folklore»?', options:['Sapere del popolo','Canto dei re','Storia delle nazioni','Musica dei contadini'], correct:0 },
+        { q:'Chi è Ossian, secondo il testo?', options:['Un compositore tedesco','Un poeta italiano realmente esistito','Un re celtico storico','Un bardo che gli scozzesi si inventano'], correct:3 },
+        { q:'Che cosa nasce tra fine Settecento e primo Ottocento, per il bisogno di ricostruire le proprie radici musicali?', options:['Il pianoforte','L\'orchestra sinfonica','La storia della musica','La musica da camera'], correct:2 },
+        { q:'Come viene riscoperto Bach dai romantici?', options:['Come compositore d\'opera italiana','Come musicista tipicamente tedesco e luterano','Come maestro del Classicismo','Come musicista francese'], correct:1 },
+        { q:'Quanta della musica che si ascolta oggi in concerto è antica, secondo il testo?', options:['Il 5%','Circa il 50%','Quasi nulla','Forse il 95%'], correct:3 },
+        { q:'Quale posto occupava la musica nella graduatoria illuminista delle arti?', options:['L\'ultimo','Il primo','Il secondo','Il terzo'], correct:0 },
+        { q:'Perché la musica, per i romantici, balza al primo posto tra le arti?', options:['Perché è l\'arte più concreta','Perché per la sua indeterminatezza esprime lo stato d\'animo senza il filtro delle parole','Perché si basa sul calcolo','Perché è sempre accompagnata dal testo'], correct:1 },
+        { q:'Come rappresenta gli stati d\'animo il Barocco, secondo il testo?', options:['Con totale coinvolgimento personale','Solo attraverso la danza','Senza coinvolgimento, per finzione, come in un gioco','Esprimendo la vita interiore del compositore'], correct:2 },
+        { q:'Quale compositore fu anche critico musicale?', options:['Schumann','Chopin','Brahms','Liszt'], correct:0 },
+        { q:'In quali due sensi il pianoforte è lo strumento romantico per eccellenza?', options:['Come strumento dei re e come strumento dei monaci','Come strumento solista e come strumento da chiesa','Come strumento più antico e più economico','Come orchestra in miniatura e come simbolo della borghesia'], correct:3 },
+        { q:'Che cosa erano i conservatori dell\'epoca barocca, come quelli di Napoli?', options:['Scuole di musica in senso moderno','Istituti di carità per orfani e trovatelli dove si insegnava anche la musica','Teatri d\'opera','Società per pubblicare le opere di Bach'], correct:1 },
+        { q:'Al posto delle imponenti sinfonie classiche, quali forme si preferiscono?', options:['Solo la forma-sonata','Le grandi messe','Le forme piccole: il Lied, il notturno, l\'improvviso, la mazurca…','Le fughe a quattro voci'], correct:2 }
+      ]},
+      riassunti: { title:'Quiz — Il Romanticismo', questions:[
+        { q:'Quando nasce, circa, il Romanticismo?', options:['Circa nell\'anno 1500','Circa nell\'anno 1800','Circa nell\'anno 1950','Circa nell\'anno 1200'], correct:1 },
+        { q:'Da quale parola viene «romantico»?', options:['Da Parigi','Da Vienna','Da Roma','Da Londra'], correct:2 },
+        { q:'Che cosa amano i romantici?', options:['Il Medioevo, i castelli e i cavalieri','Le macchine','I computer','Le automobili'], correct:0 },
+        { q:'Che cosa raccolgono i fratelli Grimm?', options:['Le sinfonie','I pianoforti','Le monete','Le fiabe del popolo'], correct:3 },
+        { q:'Quale fiaba è famosa?', options:['Il Messiah','Cappuccetto Rosso','L\'Orfeo','Le Quattro Stagioni'], correct:1 },
+        { q:'Chi fa suonare una grande opera di Bach?', options:['Antonio Vivaldi','Claudio Monteverdi','Guido d\'Arezzo','Felix Mendelssohn'], correct:3 },
+        { q:'Quale arte diventa la più importante?', options:['La musica','L\'architettura','La pittura','La scultura'], correct:0 },
+        { q:'Che cosa racconta il compositore romantico?', options:['Le sue spese','Il suo orario','Le sue emozioni','Il suo lavoro di avvocato'], correct:2 },
+        { q:'Qual è lo strumento simbolo dell\'Ottocento?', options:['L\'organo','Il liuto','Il tamburo','Il pianoforte'], correct:3 },
+        { q:'Dove apre nel 1795 il primo conservatorio?', options:['A Parigi','A Mosca','A Madrid','A Oslo'], correct:0 },
+        { q:'Che cosa scrive Chopin?', options:['Canti gregoriani','Mazurche e polacche','Opere barocche','Messe latine'], correct:1 },
+        { q:'Di che cosa è fatto il sassofono?', options:['Di legno','Di carta','Di metallo','Di vetro'], correct:2 }
       ]}
     }
   };
