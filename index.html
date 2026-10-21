@@ -272,6 +272,38 @@
   .tl3-music{padding:12px 8px; font-size:.72rem; color:var(--ink-70); text-align:center; line-height:1.5;}
   .bio-dates{color:var(--ink-45); font-size:.95rem; margin:-6px 0 24px; text-align:center;}
   .video-links{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 20px;}
+  /* ---- tabella polifonia (prova, Terza) ---- */
+  .instr-video{aspect-ratio:16/9; background:#000;}
+  .instr-video iframe{width:100%; height:100%; border:0; display:block;}
+  .video-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:12px 0 10px;}
+  @media (max-width:560px){ .video-grid{grid-template-columns:1fr;} }
+  .video-grid .instr-card h4{border-top:none;}
+  .article-body .nota-piede{font-size:.82rem; color:var(--ink-45);}
+  .polif-wrap{overflow-x:auto; margin:14px 0 24px;}
+  table.polif-table{width:100%; border-collapse:collapse; font-size:.88rem;}
+  .polif-table thead th{background:var(--ink); color:#fff; padding:9px 12px; text-align:left; font-weight:600; font-size:.75rem; letter-spacing:.02em;}
+  .polif-table th.sec, .polif-table td.sec{width:56px; text-align:center;}
+  .polif-table th.notaz, .polif-table td.notaz{width:170px;}
+  .polif-table td{border:1px solid var(--paper-line); padding:12px 14px; vertical-align:top;}
+  .polif-table td.sec{background:#FBF8EE; font-weight:700; color:var(--burgundy);}
+  .polif-table tbody tr:nth-child(even) td:not(.sec){background:#FBF8EE;}
+  .polif-table td p{margin:0 0 10px; font-size:.88rem;}
+  .polif-table td > p:last-child, .polif-table td > .video-links:last-child{margin-bottom:0;}
+  .polif-table td ul, .polif-table td ol{margin:0 0 10px; font-size:.88rem;}
+  .polif-table td.notaz p{font-size:.82rem; margin:0 0 8px;}
+  .polif-table .video-links{margin:10px 0 0;}
+  ul.riepilogo{list-style:none; padding-left:20px;}
+  @media (max-width:760px){
+    .polif-wrap{overflow:visible;}
+    table.polif-table, .polif-table tbody, .polif-table tr, .polif-table td{display:block; width:auto;}
+    .polif-table thead{display:none;}
+    .polif-table tr{border:1px solid var(--paper-line); margin-bottom:16px; background:#fff;}
+    .polif-table td{border:none; border-top:1px solid var(--paper-line);}
+    .polif-table td.sec{width:auto; text-align:left; border-top:none; background:var(--ink); color:#fff;}
+    .polif-table td.notaz{background:#FBF8EE !important; width:auto;}
+    .polif-table td.notaz::before{content:"Notazione"; display:block; font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-45); margin-bottom:4px;}
+  }
+
   .video-links a{font-size:.82rem; border:1px solid var(--paper-line); padding:6px 12px; text-decoration:none; color:var(--ink-70);}
   .video-links a:hover{border-color:var(--ink); color:var(--ink);}
   .ext-link{font-size:.78rem; color:var(--ink-70); text-decoration:underline; margin-left:8px;}
@@ -592,7 +624,12 @@
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-lineadeltempo-3','terza')">Linea del tempo</button><button class="quiz-tag" onclick="openQuiz('lineadeltempo','terza')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-igreci','terza')">I Greci</button><button class="quiz-tag" onclick="openTopic('quiz-igreci','terza')">quiz</button></h4></div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-gregoriano-3','terza')">Canto gregoriano</button><button class="quiz-tag" onclick="openQuiz('gregoriano','terza')">quiz</button></h4></div>
-        <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-polifonia-3','terza')">Nascita della polifonia e della scrittura musicale / Trovatori e trovieri</button><button class="quiz-tag" onclick="openQuiz('polifonia','terza')">quiz</button></h4></div>
+        <div class="tl-item">
+          <h4><button class="tl-link" onclick="openTopic('topic-polifonia-3','terza')">Nascita della polifonia e della scrittura musicale / Trovatori e trovieri</button><button class="quiz-tag" onclick="openQuiz('polifonia','terza')">quiz</button></h4>
+          <div class="tl-people">
+            <button onclick="openTopic('topic-polifonia-tabella-3','terza')">Tabella riassuntiva</button>
+          </div>
+        </div>
         <div class="tl-item"><h4><button class="tl-link" onclick="openTopic('topic-rinascimento-3','terza')">Rinascimento</button></h4></div>
         <div class="tl-item">
           <h4><button class="tl-link" onclick="openTopic('topic-barocco-3','terza')">Barocco</button><button class="quiz-tag" onclick="openQuiz('barocco','terza')">quiz</button></h4>
@@ -1072,6 +1109,125 @@
     <p>Il tema dominante è l’<strong>amor cortese</strong>, derivato probabilmente dalla poesia araba dello <em>zajal</em>. La donna è vista come domina, figura superiore che ispira il perfezionamento interiore del cavaliere. La musica usa testi in volgare, ha ritmi più vivaci, spesso legati alla danza, e offre un forte contrasto con il severo latino del canto gregoriano. Famosissima <em>Kalenda Maya</em> di Raimbaut de Vaqueiras.</p>
     <p>Questa è la prima tradizione <strong>colta</strong> (un vero status symbol aristocratico), <strong>monodica profana scritta</strong>. La musica profana precedente, sebbene esistesse, non è stata tramandata perché non veniva considerata “arte”. La sua esistenza è dimostrata solo dalle ripetute condanne della Chiesa.</p>
     <div class="map-embed"><iframe src="https://www.youtube.com/embed/vOtTvBA09O0" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Pop Star nel Medioevo: trovatori e trovieri"></iframe></div>
+    
+  </div></div>
+</section>
+
+<section id="view-topic-polifonia-tabella-3" class="view class-page">
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-hero" style="border-color:var(--gold);"><h2>Lo sviluppo della polifonia in occidente</h2></div>
+  <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
+  <div class="sections"><div class="article-body">
+
+    <p>Il canto a più voci era già conosciuto nell’antichità (V secolo): sia nella cultura greco–romana sia nel mondo bizantino troviamo esempi di esecuzioni vocali e strumentali simultanee, come l’<strong>ison</strong> bizantino<sup>1</sup> o il suono dell’<strong>aulos</strong> greco.</p>
+    <div class="video-links">
+      <a href="https://youtu.be/aI7YwJ1jBhY?si=th2DLeW6KiJUb7cJ" target="_blank" rel="noopener">▶ Video: aulos greco</a>
+      <a href="https://youtu.be/Ib53nUobe0Q?si=p294DSq2vP0LuYpo" target="_blank" rel="noopener">▶ Video: ison bizantino</a>
+      <a href="https://youtu.be/Nm8AAC3XTEY?si=NCfwIf2nWa6KCUBa" target="_blank" rel="noopener">▶ Video: ison bizantino (2)</a>
+    </div>
+    <p>Tuttavia di tali pratiche – che comunque non erano <strong>polifoniche</strong> nel senso moderno del termine (cioè tante voci indipendenti), si trattava piuttosto di <strong>eterofonia</strong> cioè una voce principale con una o al massimo due voci di appoggio – non abbiamo alcuna testimonianza scritta (<em>fonti dirette</em> = scrittura musicale).</p>
+    <p>Il percorso verso la polifonia procedette parallelamente al perfezionamento della <strong>scrittura musicale</strong> e richiese circa cinque secoli = dall’800 [IX secolo] al 1300 [XIV secolo], che ora analizzeremo.</p>
+    <p>Prentesi: la polifonia occidentale è in rapporto diretto con la pratica della <strong>tropatura</strong>, di cui rappresenta un’evoluzione.</p>
+    <p class="nota-piede"><sup>1</sup> Consuetudine, testimoniata nel IV secolo da S. G. Crisostomo e al principio del VII da S. Sofronio di Gerusalemme, che paragona l’<em>ison</em> al «ronzio di api celesti».</p>
+
+    <h2 class="paragrafo">Il concetto di tropo</h2>
+    <p>Il termine <em>tropo</em> deriva dal greco <em>τρόπος</em>, “figura retorica”, ossia il dire qualcosa “in un modo diverso”.</p>
+    <p>Nel Medioevo si sentì il bisogno di creare nuovi canti liturgici, ma il repertorio gregoriano, considerato secondo la tradizione “dettato” dallo spirito santo (vedi dipinto Gregorio Magno), non poteva essere modificato direttamente. Per questo si iniziò ad <strong>arricchirlo</strong> attraverso due principali forme di tropi.</p>
+    <h3>Tropo orizzontale (il tropo più antico)</h3>
+    <p>Consisteva nell’inserire <strong>nuove note</strong> all’interno della melodia preesistente. In questo modo il canto originario rimaneva intatto, ma veniva arricchito da un percorso melodico aggiuntivo. In questo modo si salvano capre e cavoli, nel senso che la originaria e divina non veniva intaccata ma allo stesso tempo si “creava” qualcosa di diverso, di “nuovo”.</p>
+    <p>C’era poi il caso in cui, a una brano ricco di melismi veniva <strong>innestato</strong> un nuovo testo con tante sillabe quanti erano i volteggi vocali in modo da rendere più facile la memorizzazione = <em>tropo di sostituzione</em>.</p>
+    <h3>Tropo verticale</h3>
+    <p>A un certo punto, alla melodia originale (la <em>vox principalis</em> o <em>tenor</em>), si iniziò a <strong>sovrapporre</strong> una nuova voce (detta <strong>vox organalis)</strong>. Tale pratica prese il nome di <strong>organum</strong>, perché il risultato ricordava il suono dell’organo (<em>organon</em> = strumento in greco).</p>
+
+    <h2 class="paragrafo">Testimonianze scritte sulla nascita della polifonia</h2>
+    <p>Come detto, la polifonia procede di pari passo con lo sviluppo della scrittura.</p>
+    <p>Abbiamo notizie della pratica polifonica in diversi trattati:</p>
+
+    <div class="polif-wrap">
+    <table class="polif-table">
+      <thead><tr><th class="sec">Sec.</th><th>TESTIMONIANZE SCRITTE SULLA NASCITA DELLA POLIFONIA</th><th class="notaz">NOTAZIONE</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="sec">IX</td>
+          <td><p>Il canto gregoriano è ormai formato. In questi anni, alcuni trattati citano la pratica della tropatura verticale, ma la notazione dell’epoca era <strong>neumatica</strong>, quindi <strong>adiastematica</strong> (<em>α</em> privativo + <em>διάστημα</em> [distanza] = <em>“senza distanza”</em>), cioè non indicava l’altezza esatta dei suoni. Per questo sappiamo con certezza che venivano praticate le prime forme polifoniche, ma non possiamo sapere concretamente “come suonavano”.</p></td>
+          <td class="notaz"><p>Adiastematica: neumatica (o chironomica)</p><p>Amensurale</p></td>
+        </tr>
+        <tr>
+          <td class="sec">X</td>
+          <td><p><em>Musica Enchiriadis</em> (manuale di musica, scritto in latino) rappresenta una delle prime descrizioni dell’<strong>organum</strong>. Erano due sole voci con moto parallelo:</p>
+            <ol>
+              <li><em>vox principalis</em> = la melodia (preghiera) originale</li>
+              <li><em>vox organalis</em> = la tropatura verticale</li>
+            </ol>
+            <p>Scritte in una strana forma di notazione adiastematica: la notazione dasiana.</p>
+            <p style="overflow-wrap:anywhere;"><a href="https://www.e-codices.unifr.ch/it/doubleview/sbe/0079/V1/" target="_blank" rel="noopener"><u>https://www.e-codices.unifr.ch/it/doubleview/sbe/0079/V1/</u></a></p></td>
+          <td class="notaz"><p>Diastematica dasiana</p><p>Amensurale</p></td>
+        </tr>
+        <tr>
+          <td class="sec">XI</td>
+          <td><p><em>Guido d’Arezzo</em>:</p>
+            <ul>
+              <li>Nel <em>Micrologus</em> (ca. 1026), descrive l’<strong>organum</strong> quindi illustra come comporre una seconda voce.</li>
+              <li>Nel <em>Prologus in Antiphonarium</em> parla di <strong>tetragramma</strong> come sistema ormai pienamente formato,</li>
+              <li>Sappiamo che in questi anni si sperimentano non solo movimenti paralleli, ma anche il <strong>moto obliquo</strong> (la vox principalis resta ferma mentre la vox organalis sale o scende) e il <strong>moto contrario</strong> (la vox principalis sale mentre la vox organalis scende), ampliando le possibilità polifoniche.</li>
+            </ul></td>
+          <td class="notaz"><p><strong>Diastematica su tetragramma</strong></p><p>Amensurale</p></td>
+        </tr>
+        <tr>
+          <td class="sec">XII</td>
+          <td><p><em>Manoscritti di S. Marziale in Limoges</em> nella prima metà XII secolo in Aquitania (regione della Francia al confine con la Spagna). Qui c’era importante abbazia, appunto di <em>San Marziale</em>, sede della omonima <em>Scuola di San Marziale</em>, che anticipò la <em>Scuola di Notre-Dame</em> (vedi sotto) con dei manoscritti contenenti brani polifonici. La notazione, ormai diastematica (tetragramma) testimonia il raggiungimento <strong>dell’indipendenza ritmica delle due voci</strong> con l’affermazione dell’<strong>organum floridum</strong> (o fiorito), caratterizzato da una vox principalis tenuta (che prenderà da qui in avanti il nome di <em>tenor</em>) e una vox organalis ricca di melismi (fioriture vocali come nella pratica dell’ison =vedi video sopra).</p>
+            <p>Siamo arrivati circa al 1150 d.C. e a Parigi, nella cattedrale di <strong>Notre-Dame</strong>, sorge una tra le più importanti centri di produzione polifonica dell’Occidente, chiamata appunto <em>Scuola di Notre-Dame</em>. La sua attività si sviluppa dalla seconda metà del XII secolo per tutto il XIII e corrisponde alla stagione definita <strong>Ars Antiqua</strong>.</p>
+            <p>Da questo momento in avanti non avremo più solo una seconda voce, ma avremo una terza voce che si chiameranno d’ora in poi, rispettivamente, <em>duplum</em> e <em>triplum</em>.</p>
+            <p>Questo canto polifonico fu coltivato specialmente dai cantori/compositori attivi nella cattedrale di Notre Dame, per la maggior parte rimasti anonimi tranne due, un certo <strong><em>Magister Leoninus</em></strong> (~1150) e il suo successore <strong><em>Magister Perotinus</em></strong> (~1200) dal quale ci arriva la prima composizione conosciuta a <strong>quattro voci</strong>.</p>
+            <p>Il più importante tipo di composizione che si formerà alla fine del Duecento nella <em>Scuola di Notre-Dame</em>, coronando gli sviluppi polifonici di cui si è parlato, è il <strong>mottetto</strong>. Caratterizzata da più voci (tre o quattro), ognuna con un testo differente; infatti il nome viene dal francese <em>mot</em> = parola. Significa cioè che mentre il tenor mantiene le parole della liturgia latina, le altre voci cantano in francese.</p>
+            <div class="video-links"><a href="https://www.youtube.com/watch?v=zfrOjBl2pqQ" target="_blank" rel="noopener">▶ Video: mottetto</a></div></td>
+          <td class="notaz"><p>Diastematica: Tetragramma</p><p>Amensurale</p></td>
+        </tr>
+        <tr>
+          <td class="sec">XIII</td>
+          <td><p>Precisamente nel 1280, <strong>Franco da Colonia</strong>, nel suo trattato <strong><em>Ars cantus mensurabilis</em></strong>, introduce un sistema nuovo e rivoluzionario: la <strong>notazione mensurale</strong>, che permette di indicare chiaramente la <strong>durata</strong> delle note.</p>
+            <p>Grazie a questa innovazione, la polifonia diventa sempre più complessa perchè ci si può appoggiare allo spartito per cantare simultaneamente ciascuno la propria <em>parte</em>, senza perdersi. Ognuno, canta la propria canzone, nel proprio angolo, e insieme creano qualcosa di unico.</p>
+            <p>Questo sistema prepara il terreno per la musica del Trecento.</p></td>
+          <td class="notaz"><p>Diastematica su Tetragramma</p><p><strong>Mensurale</strong></p></td>
+        </tr>
+        <tr>
+          <td class="sec">XIV</td>
+          <td><p>Nasce così, nel Trecento, l’<strong><em>Ars Nova</em></strong>.</p>
+            <p>La caratteristica più importante dell’Ars Nova, che la differenzia maggiormente dall’Ars Antiqua, è il complicatissimo intreccio di voci reso possibili dallo sviluppo della scrittura mensurale. Inoltre il testo poteva essere profano (polifonia profana).</p>
+            <p>Con l’Ars Nova, inizia poi la polifonia strumentale o voce + strumento.</p>
+            <p>Strumenti tipici del periodo:</p>
+            <div class="video-grid">
+        <div class="instr-card">
+          <div class="instr-video"><iframe src="https://www.youtube.com/embed/Xq8RN4d2Lfs" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Viella"></iframe></div>
+          <h4>Viella</h4>
+        </div>
+        <div class="instr-card">
+          <div class="instr-video"><iframe src="https://www.youtube.com/embed/Uk4iVold0eU" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Organo portativo"></iframe></div>
+          <h4>Organo portativo</h4>
+        </div>
+        <div class="instr-card">
+          <div class="instr-video"><iframe src="https://www.youtube.com/embed/EV0TPWafHCA" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Salterio"></iframe></div>
+          <h4>Salterio</h4>
+        </div>
+        <div class="instr-card">
+          <div class="instr-video"><iframe src="https://www.youtube.com/embed/sN8mEdrjDoc" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Ghironda"></iframe></div>
+          <h4>Ghironda</h4>
+        </div>
+            </div>
+            <p class="nota-piede">Senza video: <strong>flauti</strong>, <strong>tamburelli</strong>.</p></td>
+          <td class="notaz"><p>Diastematica su Tetragramma</p><p>Mensurale</p></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 class="paragrafo">Riepilogo evolutivo della notazione e della polifonia</h2>
+    <h3>Adiastematica (campo aperto, chironomica)</h3>
+    <ul class="riepilogo"><li>800: neumi</li></ul>
+    <h3>Diastematica amensurale</h3>
+    <ul class="riepilogo"><li>900: Dasiana e moto parallelo</li><li>1000: tetragramma e moto obliquo/contrario</li></ul>
+    <h3>Diastematica mensurale</h3>
+    <ul class="riepilogo"><li>1280: Franco di Colonia</li></ul>
     
   </div></div>
 </section>
@@ -3253,7 +3409,7 @@
   var returnTo = 'home';
   function goBack(){ show(returnTo); }
   function show(id){
-    ['home','prima','seconda','terza','trame','riassunti','dettato','escape-opera','quizpage','quiz-igreci','topic-lineadeltempo','topic-lineadeltempo-3','topic-igreci','topic-gregoriano','topic-gregoriano-2','topic-gregoriano-3','topic-polifonia','topic-polifonia-3','topic-polifonia-prima','topic-teorianote','topic-teorianote-2','topic-teorianote-3','topic-classicismo','topic-classicismo-2','topic-classicismo-3','topic-rinascimento-3','topic-barocco-3','topic-lineadeltempo-facile','topic-igreci-facile','topic-gregoriano-facile','topic-polifonia-facile','topic-rinascimento-facile','topic-barocco-facile','topic-classicismo-facile','topic-note-facile','bio-monteverdi','bio-vivaldi','bio-vivaldi-3','bio-handel','bio-handel-2','bio-handel-3','bio-bach','bio-bach-2','bio-bach-3','bio-haydn','bio-mozart','bio-mozart-3','bio-beethoven','subpage','topic-romanticismo','topic-romanticismo-2','topic-romanticismo-3','topic-romanticismo-facile'].forEach(function(v){
+    ['home','prima','seconda','terza','trame','riassunti','dettato','escape-opera','quizpage','quiz-igreci','topic-lineadeltempo','topic-lineadeltempo-3','topic-igreci','topic-gregoriano','topic-gregoriano-2','topic-gregoriano-3','topic-polifonia','topic-polifonia-3','topic-polifonia-prima','topic-teorianote','topic-teorianote-2','topic-teorianote-3','topic-classicismo','topic-classicismo-2','topic-classicismo-3','topic-rinascimento-3','topic-barocco-3','topic-lineadeltempo-facile','topic-igreci-facile','topic-gregoriano-facile','topic-polifonia-facile','topic-rinascimento-facile','topic-barocco-facile','topic-classicismo-facile','topic-note-facile','bio-monteverdi','bio-vivaldi','bio-vivaldi-3','bio-handel','bio-handel-2','bio-handel-3','bio-bach','bio-bach-2','bio-bach-3','bio-haydn','bio-mozart','bio-mozart-3','bio-beethoven','subpage','topic-romanticismo','topic-romanticismo-2','topic-romanticismo-3','topic-romanticismo-facile','topic-polifonia-tabella-3'].forEach(function(v){
       document.getElementById('view-'+v).classList.toggle('active', v===id);
     });
     window.scrollTo(0,0);
