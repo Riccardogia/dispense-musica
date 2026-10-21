@@ -124,6 +124,7 @@
   .practice-list a{text-decoration:underline; text-decoration-color:var(--paper-line); text-underline-offset:3px;}
   .practice-list a:hover, .practice-list a:focus-visible{text-decoration-color:var(--ink);}
   .practice-list .level{margin-left:auto; font-size:.88rem; color:var(--ink-45);}
+  .placeholder .practice-list{margin-top:10px;} .placeholder .practice-list li:last-child{border-bottom:none;}
 
   .scores{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
   @media (max-width:620px){ .scores{grid-template-columns:1fr;} }
@@ -479,13 +480,21 @@
         <div class="quiz-row"><button class="quiz-tag" onclick="event.stopPropagation();openQuiz('note','prima')">quiz: note e figure</button><button class="quiz-tag" onclick="event.stopPropagation();openQuiz('battute','prima')">quiz: figure e battute</button></div>
         Nomi delle note sul pentagramma, figure di durata, parti della nota, pause, valore delle figure e battuta.
       </div>
-      <ul class="practice-list">
+      <div class="placeholder" style="margin-bottom:16px;">
+        <strong>🎵 Lettura in chiave di violino</strong>
+        <ul class="practice-list">
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/4" target="_blank" rel="noopener">Note: chiave di violino</a><span class="level">base</span></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/5" target="_blank" rel="noopener">Note: chiave di violino</a><span class="level">intermedio</span></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/7" target="_blank" rel="noopener">Note: chiave di violino</a><span class="level">avanzato</span></li>
-        <li class="group-start"><a href="https://www.musicca.com/it/esercizi/cerchio/131" target="_blank" rel="noopener">Ritmo: semibrevi, minime e semiminime</a></li>
+        </ul>
+      </div>
+      <div class="placeholder" style="margin-bottom:0;">
+        <strong>🎵 Lettura ritmica</strong>
+        <ul class="practice-list">
+        <li><a href="https://www.musicca.com/it/esercizi/cerchio/131" target="_blank" rel="noopener">Ritmo: semibrevi, minime e semiminime</a></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/134" target="_blank" rel="noopener">Ritmo: crome</a></li>
-      </ul>
+        </ul>
+      </div>
     </div>
 
     <div class="subsection">
@@ -547,16 +556,24 @@
         <div class="quiz-row"><button class="quiz-tag" onclick="event.stopPropagation();openQuiz('note','seconda')">quiz: note e figure</button><button class="quiz-tag" onclick="event.stopPropagation();openQuiz('battute','seconda')">quiz: figure e battute</button><button class="quiz-tag" onclick="event.stopPropagation();openQuiz('alter','seconda')">quiz: alterazioni e terzine</button></div>
         Nomi delle note sul pentagramma, figure di durata, parti della nota, pause, valore delle figure, battuta, alterazioni e terzine.
       </div>
-      <ul class="practice-list">
+      <div class="placeholder" style="margin-bottom:16px;">
+        <strong>🎵 Lettura in chiave di violino</strong>
+        <ul class="practice-list">
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/4" target="_blank" rel="noopener">Note: chiave di violino</a><span class="level">base</span></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/5" target="_blank" rel="noopener">Note: chiave di violino</a><span class="level">intermedio</span></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/7" target="_blank" rel="noopener">Note: chiave di violino</a><span class="level">avanzato</span></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/6" target="_blank" rel="noopener">Note: alterazioni</a></li>
-        <li class="group-start"><a href="https://www.musicca.com/it/esercizi/cerchio/131" target="_blank" rel="noopener">Ritmo: semibrevi, minime e semiminime</a></li>
+        </ul>
+      </div>
+      <div class="placeholder" style="margin-bottom:0;">
+        <strong>🎵 Lettura ritmica</strong>
+        <ul class="practice-list">
+        <li><a href="https://www.musicca.com/it/esercizi/cerchio/131" target="_blank" rel="noopener">Ritmo: semibrevi, minime e semiminime</a></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/134" target="_blank" rel="noopener">Ritmo: crome</a></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/149" target="_blank" rel="noopener">Ritmo: semicrome</a></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/161" target="_blank" rel="noopener">Ritmo: terzine</a></li>
-      </ul>
+        </ul>
+      </div>
     </div>
 
     <div class="subsection">
@@ -616,18 +633,26 @@
         <div class="quiz-row"><button class="quiz-tag" onclick="event.stopPropagation();openQuiz('note','terza')">quiz: note e figure</button><button class="quiz-tag" onclick="event.stopPropagation();openQuiz('battute','terza')">quiz: figure e battute</button><button class="quiz-tag" onclick="event.stopPropagation();openQuiz('alter','terza')">quiz: alterazioni, punto, legatura, terzine e scale</button></div>
         Nomi delle note sul pentagramma, figure di durata, parti della nota, pause, valore delle figure, battuta, alterazioni, punto, legatura, terzine e scale maggiori.
       </div>
-      <ul class="practice-list">
+      <div class="placeholder" style="margin-bottom:16px;">
+        <strong>🎵 Lettura in chiave di violino</strong>
+        <ul class="practice-list">
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/4" target="_blank" rel="noopener">Note: chiave di violino</a><span class="level">base</span></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/5" target="_blank" rel="noopener">Note: chiave di violino</a><span class="level">intermedio</span></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/7" target="_blank" rel="noopener">Note: chiave di violino</a><span class="level">avanzato</span></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/6" target="_blank" rel="noopener">Note: alterazioni</a></li>
-        <li class="group-start"><a href="https://www.musicca.com/it/esercizi/cerchio/131" target="_blank" rel="noopener">Ritmo: semibrevi, minime e semiminime</a></li>
+        </ul>
+      </div>
+      <div class="placeholder" style="margin-bottom:0;">
+        <strong>🎵 Lettura ritmica</strong>
+        <ul class="practice-list">
+        <li><a href="https://www.musicca.com/it/esercizi/cerchio/131" target="_blank" rel="noopener">Ritmo: semibrevi, minime e semiminime</a></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/134" target="_blank" rel="noopener">Ritmo: crome</a></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/140" target="_blank" rel="noopener">Ritmo: note legate</a></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/143" target="_blank" rel="noopener">Ritmo: note puntate</a></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/149" target="_blank" rel="noopener">Ritmo: semicrome</a></li>
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/161" target="_blank" rel="noopener">Ritmo: terzine</a></li>
-      </ul>
+        </ul>
+      </div>
     </div>
 
     <div class="subsection">
@@ -735,9 +760,12 @@
         <strong>🎵 La durata delle note<button class="quiz-tag" onclick="event.stopPropagation();openQuiz('durata','riassunti')">quiz</button></strong>
         Quanto dura ogni nota e come si riempie una battuta.
       </div>
-      <ul class="practice-list">
+      <div class="placeholder" style="margin-bottom:0;">
+        <strong>🎵 Lettura in chiave di violino</strong>
+        <ul class="practice-list">
         <li><a href="https://www.musicca.com/it/esercizi/cerchio/4" target="_blank" rel="noopener">Note: chiave di violino</a><span class="level">base</span></li>
-      </ul>
+        </ul>
+      </div>
     </div>
 
     <div class="subsection">
