@@ -331,6 +331,47 @@
   .subpage-body p{color:var(--ink-70); font-size:.95rem;}
 
   footer{border-top:1px solid var(--paper-line); padding:34px 28px 46px; text-align:center; font-size:.82rem; color:var(--ink-45);}
+  /* ===== Stampa ===== */
+  .print-btn{margin-left:auto; background:none; border:1px solid var(--paper-line); padding:6px 14px; font-size:.85rem; cursor:pointer; color:var(--ink);}
+  .print-btn:hover{border-color:var(--ink);}
+  .print-video{display:none;}
+  #print-book{display:none;}
+  @page{size:A4; margin:15mm 14mm;}
+  @page wide{size:A4 landscape; margin:12mm;}
+  @media print{
+    html{font-size:100%;}
+    body{background:#fff; color:#000; font-size:11pt; line-height:1.5;}
+    .view{display:none !important; min-height:0;}
+    .view.active{display:block !important; animation:none;}
+    .class-top,.download-book-wrap,.listen-btn,.print-btn,.quiz-tag,.quiz-row,.cn-bar,.cn-voices,.gf-note,.cn-hl,.cn-sel,footer,#rest-assets,.map-embed,.instr-video,iframe{display:none !important;}
+    .sections{max-width:none; padding:0;}
+    .article-body{max-width:none;}
+    .class-hero{padding:0 0 8pt; margin:0 0 12pt; border-bottom:2pt solid #888;}
+    .class-hero h2{font-size:22pt; margin:0;}
+    .class-hero .roman{font-size:16pt;}
+    .canva-tl-wrap{padding:0 0 10pt;}
+    h2,h3,h4{break-after:avoid;}
+    p,li{orphans:3; widows:3;}
+    img,svg,figure,tr,.score-card,.cn-score,.canva-tl-wrap,.instr-card{break-inside:avoid;}
+    .cn-score{max-width:100% !important; border:none; cursor:auto;}
+    .cn-score img{max-height:185mm; width:auto; max-width:100%; margin:0 auto;}
+    .staff-wrap,.tl3-scroll,.polif-wrap,.cal-table-wrap{overflow:visible !important;}
+    .staff-diagram{min-width:0 !important; width:100%; height:auto;}
+    .print-video{display:block; font-size:9.5pt; margin:6pt 0 10pt; padding:4pt 8pt; border:1pt solid #aaa; word-break:break-all; break-inside:avoid;}
+    .video-links a{border:none; padding:0; font-size:9.5pt;}
+    .video-links a::after{content:" – " attr(href); font-size:8.5pt; word-break:break-all;}
+    #view-topic-polifonia-tabella-3{page:wide;}
+    .book-page.wide{page:wide;}
+    .book-page{display:block; break-before:page;}
+    .book-cover{display:block; min-height:230mm; text-align:center; padding-top:70mm;}
+    .book-cover h1{font-size:34pt; margin:0 0 6pt;}
+    .book-cover h2{font-size:22pt; font-weight:400; margin:0 0 40pt;}
+    .book-toc{break-before:page;}
+    .book-toc h2{font-size:20pt; margin:0 0 12pt;}
+    .book-toc ol{margin:0; padding-left:22pt; line-height:1.9;}
+    body.printing-book > *:not(#print-book){display:none !important;}
+    body.printing-book #print-book{display:block !important;}
+  }
 </style>
 </head>
 <body>
@@ -467,7 +508,7 @@
   <div class="class-top"><button class="back-btn" onclick="show('home')">← Home</button></div>
   <div class="class-hero"><span class="roman">I</span><h2>Prima</h2></div>
   <div class="download-book-wrap">
-    <button class="download-book-btn" id="download-libro-prima" onclick="alert('Il PDF stampabile della classe Prima sarà disponibile qui a breve.')">
+    <button class="download-book-btn" id="download-libro-prima" onclick="stampaLibro('prima')" title="Si apre la finestra di stampa: scegli «Salva come PDF»">
       <span class="dl-icon">📥</span> Scarica il libro della classe Prima (PDF)
     </button>
   </div>
@@ -543,7 +584,7 @@
   <div class="class-top"><button class="back-btn" onclick="show('home')">← Home</button></div>
   <div class="class-hero"><span class="roman">II</span><h2>Seconda</h2></div>
   <div class="download-book-wrap">
-    <button class="download-book-btn" id="download-libro-seconda" onclick="alert('Il PDF stampabile della classe Seconda sarà disponibile qui a breve.')">
+    <button class="download-book-btn" id="download-libro-seconda" onclick="stampaLibro('seconda')" title="Si apre la finestra di stampa: scegli «Salva come PDF»">
       <span class="dl-icon">📥</span> Scarica il libro della classe Seconda (PDF)
     </button>
   </div>
@@ -620,7 +661,7 @@
   <div class="class-top"><button class="back-btn" onclick="show('home')">← Home</button></div>
   <div class="class-hero"><span class="roman">III</span><h2>Terza</h2></div>
   <div class="download-book-wrap">
-    <button class="download-book-btn" id="download-libro-terza" onclick="alert('Il PDF stampabile della classe Terza sarà disponibile qui a breve.')">
+    <button class="download-book-btn" id="download-libro-terza" onclick="stampaLibro('terza')" title="Si apre la finestra di stampa: scegli «Salva come PDF»">
       <span class="dl-icon">📥</span> Scarica il libro della classe Terza (PDF)
     </button>
   </div>
@@ -745,7 +786,7 @@
   <div class="class-top"><button class="back-btn" onclick="show('home')">← Home</button></div>
   <div class="class-hero"><h2>Riassunti</h2></div>
   <div class="download-book-wrap">
-    <button class="download-book-btn" id="download-libro-riassunti" onclick="alert('Il PDF stampabile dei Riassunti sarà disponibile qui a breve.')">
+    <button class="download-book-btn" id="download-libro-riassunti" onclick="stampaLibro('riassunti')" title="Si apre la finestra di stampa: scegli «Salva come PDF»">
       <span class="dl-icon">📥</span> Scarica il libro dei Riassunti (PDF)
     </button>
   </div>
@@ -819,7 +860,7 @@
 
 <!-- ================= LINEA DEL TEMPO ================= -->
 <section id="view-topic-lineadeltempo" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);">
     <h2>Linea del tempo</h2>
     <p class="cal-subtitle">Per collocare nel tempo i periodi storici della musica</p>
@@ -839,7 +880,7 @@
 
 <!-- ================= LINEA DEL TEMPO (Terza) ================= -->
 <section id="view-topic-lineadeltempo-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);">
     <h2>Linea del tempo</h2>
     <p class="cal-subtitle">Per collocare nel tempo i periodi storici della musica</p>
@@ -859,7 +900,7 @@
 
 <!-- ================= I GRECI ================= -->
 <section id="view-topic-igreci" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>I Greci</h2></div>
 
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
@@ -920,7 +961,7 @@
 
 <!-- ================= CANTO GREGORIANO ================= -->
 <section id="view-topic-gregoriano" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Il canto gregoriano</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -960,7 +1001,7 @@
 
 <!-- ================= CANTO GREGORIANO (Terza) ================= -->
 <section id="view-topic-gregoriano-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Il canto gregoriano</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -1026,7 +1067,7 @@
 
 <!-- ================= NASCITA DELLA POLIFONIA / TROVATORI ================= -->
 <section id="view-topic-polifonia" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Nascita della polifonia e della scrittura musicale</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -1094,7 +1135,7 @@
 
 <!-- ================= POLIFONIA (Terza) ================= -->
 <section id="view-topic-polifonia-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Nascita della polifonia e della scrittura musicale</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -1172,7 +1213,7 @@
 </section>
 
 <section id="view-topic-polifonia-tabella-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Testimonianze scritte sulla nascita della polifonia</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -1262,7 +1303,7 @@
 
 <!-- ================= CLASSICISMO ================= -->
 <section id="view-topic-classicismo" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Classicismo</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -1287,7 +1328,7 @@
 </section>
 
 <section id="view-topic-romanticismo" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--rose);"><h2>Romanticismo</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -1324,7 +1365,7 @@
 
 <!-- ================= MONTEVERDI ================= -->
 <section id="view-bio-monteverdi" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Monteverdi</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1567 – 1643</p>
@@ -1336,7 +1377,7 @@
 
 <!-- ================= VIVALDI ================= -->
 <section id="view-bio-vivaldi" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Vivaldi</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1678 – 1741</p>
@@ -1350,7 +1391,7 @@
 
 <!-- ================= HÄNDEL ================= -->
 <section id="view-bio-handel" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Händel</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1685 – 1759</p>
@@ -1364,7 +1405,7 @@
 
 <!-- ================= BACH ================= -->
 <section id="view-bio-bach" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Bach</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1685 – 1750</p>
@@ -1387,7 +1428,7 @@
 
 <!-- ================= HAYDN ================= -->
 <section id="view-bio-haydn" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Haydn</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1732 – 1809</p>
@@ -1412,7 +1453,7 @@
 
 <!-- ================= MOZART ================= -->
 <section id="view-bio-mozart" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Mozart</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1756 – 1791</p>
@@ -1438,7 +1479,7 @@
 
 <!-- ================= BEETHOVEN ================= -->
 <section id="view-bio-beethoven" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Beethoven</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1770 – 1827</p>
@@ -1459,7 +1500,7 @@
 </div>
 
 <section id="view-topic-teorianote" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Le note e le figure musicali</h2></div>
   <div class="sections"><div class="article-body" style="max-width:1060px;">
 
@@ -1613,7 +1654,7 @@
 </section>
 
 <section id="view-topic-teorianote-2" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Le note e le figure musicali</h2></div>
   <div class="sections"><div class="article-body" style="max-width:1060px;">
 
@@ -1820,7 +1861,7 @@
 </section>
 
 <section id="view-topic-teorianote-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Le note e le figure musicali</h2></div>
   <div class="sections"><div class="article-body" style="max-width:1060px;">
 
@@ -2063,7 +2104,7 @@
   </div></div>
 </section>
 <section id="view-topic-igreci-2" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>I Greci</h2></div>
   <div class="sections"><div class="article-body">
     <p>I Greci non ci hanno lasciato molte musiche scritte, ma il loro contributo è stato decisivo: hanno introdotto il concetto che la musica non è solo suono, ma anche riflessione. Si chiedevano quale musica fosse adatta per educare i giovani e quali effetti potesse avere sull'animo, anticipando temi che oggi chiamiamo musicoterapia.</p>
@@ -2086,7 +2127,7 @@
 
 <!-- ================= CANTO GREGORIANO (Seconda) ================= -->
 <section id="view-topic-gregoriano-2" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Il canto gregoriano</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -2145,7 +2186,7 @@
 
 <!-- ================= NASCITA POLIFONIA (Seconda) ================= -->
 <section id="view-topic-polifonia-2" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Nascita della polifonia e della scrittura musicale</h2></div>
   <div class="sections"><div class="article-body">
     <p>Nel Medioevo la musica non è sempre stata come la immaginiamo oggi. All'inizio esisteva soprattutto il canto gregoriano, cioè una sola melodia cantata all'unisono da tutti. Con il passare dei secoli, però, si sviluppa una delle invenzioni più importanti della storia della musica: la <strong>polifonia</strong>, cioè il canto a più voci.</p>
@@ -2186,7 +2227,7 @@
 
 <!-- ================= CLASSICISMO (Seconda) ================= -->
 <section id="view-topic-classicismo-2" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Classicismo</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -2211,7 +2252,7 @@
 </section>
 
 <section id="view-topic-romanticismo-2" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--rose);"><h2>Romanticismo</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -2269,7 +2310,7 @@
 
 <!-- ================= HÄNDEL (Seconda) ================= -->
 <section id="view-bio-handel-2" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Händel</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1685 – 1759</p>
@@ -2282,7 +2323,7 @@
 
 <!-- ================= BACH (Seconda) ================= -->
 <section id="view-bio-bach-2" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Bach</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1685 – 1750</p>
@@ -2295,7 +2336,7 @@
 
 <!-- ================= HAYDN (Seconda) ================= -->
 <section id="view-bio-haydn-2" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Franz Joseph Haydn</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1732 – 1809</p>
@@ -2322,7 +2363,7 @@
 
 <!-- ================= MOZART (Seconda) ================= -->
 <section id="view-bio-mozart-2" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Mozart</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1756 – 1791</p>
@@ -2355,7 +2396,7 @@
 
 <!-- ================= VIVALDI (Terza) ================= -->
 <section id="view-bio-vivaldi-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Vivaldi</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1678 – 1741</p>
@@ -2370,7 +2411,7 @@
 
 <!-- ================= HÄNDEL (Terza) ================= -->
 <section id="view-bio-handel-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Händel</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1685 – 1759</p>
@@ -2384,7 +2425,7 @@
 
 <!-- ================= BACH (Terza) ================= -->
 <section id="view-bio-bach-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Bach</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1685 – 1750</p>
@@ -2407,7 +2448,7 @@
 
 <!-- ================= MOZART (Terza) ================= -->
 <section id="view-bio-mozart-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Mozart</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1756 – 1791</p>
@@ -2428,7 +2469,7 @@
 
 <!-- ================= RINASCIMENTO (Terza) ================= -->
 <section id="view-bio-haydn-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Haydn</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1732 – 1809</p>
@@ -2453,7 +2494,7 @@
 </section>
 
 <section id="view-bio-beethoven-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Beethoven</h2></div>
   <div class="sections"><div class="article-body">
     <p class="bio-dates">1770 – 1827</p>
@@ -2465,7 +2506,7 @@
 </section>
 
 <section id="view-topic-rinascimento-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Rinascimento</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -2493,7 +2534,7 @@
 
 <!-- ================= BAROCCO (Terza) ================= -->
 <section id="view-topic-barocco-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Barocco</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -2539,7 +2580,7 @@
 
 <!-- ================= CLASSICISMO (Terza) ================= -->
 <section id="view-topic-classicismo-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Classicismo</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -2562,7 +2603,7 @@
 </section>
 
 <section id="view-topic-romanticismo-3" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--rose);"><h2>Romanticismo</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -2628,7 +2669,7 @@
 
 <!-- ================= NASCITA DELLA POLIFONIA (Prima) ================= -->
 <section id="view-topic-polifonia-prima" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Nascita della polifonia e della scrittura musicale</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body">
@@ -2679,7 +2720,7 @@
 
 <!-- ================= LINEA DEL TEMPO (Riassunti) ================= -->
 <section id="view-topic-lineadeltempo-facile" class="view class-page facile-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Linea del tempo</h2></div>
   <div class="sections"><div class="article-body facile-body">
     
@@ -2695,7 +2736,7 @@
 
 <!-- ================= I GRECI (Riassunti) ================= -->
 <section id="view-topic-igreci-facile" class="view class-page facile-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>I Greci</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body facile-body">
@@ -2764,7 +2805,7 @@
 
 <!-- ================= IL CANTO GREGORIANO (Riassunti) ================= -->
 <section id="view-topic-gregoriano-facile" class="view class-page facile-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--burgundy);"><h2>Il canto gregoriano</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body facile-body">
@@ -2786,7 +2827,7 @@
 
 <!-- ================= LA NASCITA DELLA POLIFONIA (Riassunti) ================= -->
 <section id="view-topic-polifonia-facile" class="view class-page facile-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--violet);"><h2>La nascita della polifonia</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body facile-body">
@@ -2808,7 +2849,7 @@
 
 <!-- ================= IL RINASCIMENTO (Riassunti) ================= -->
 <section id="view-topic-rinascimento-facile" class="view class-page facile-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Il Rinascimento</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body facile-body">
@@ -2828,7 +2869,7 @@
 
 <!-- ================= IL BAROCCO (Riassunti) ================= -->
 <section id="view-topic-barocco-facile" class="view class-page facile-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Il Barocco</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body facile-body">
@@ -2882,7 +2923,7 @@
 
 <!-- ================= IL CLASSICISMO (Riassunti) ================= -->
 <section id="view-topic-classicismo-facile" class="view class-page facile-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Il Classicismo</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body facile-body">
@@ -2929,7 +2970,7 @@
 </section>
 
 <section id="view-topic-romanticismo-facile" class="view class-page facile-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--rose);"><h2>Il Romanticismo</h2></div>
   <div class="canva-tl-wrap"><img class="canva-tl-img" data-tl="strip" alt="Linea del tempo delle epoche musicali"></div>
   <div class="sections"><div class="article-body facile-body">
@@ -2967,7 +3008,7 @@
 
 <!-- ================= NOMI DELLE NOTE (Riassunti) ================= -->
 <section id="view-topic-note-facile" class="view class-page facile-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>I nomi delle note</h2></div>
   <div class="sections"><div class="article-body facile-body">
     <p class="facile-line">Le note sono sette.</p>
@@ -3048,7 +3089,7 @@
 
 <!-- ================= DURATA DELLE NOTE (Riassunti) ================= -->
 <section id="view-topic-durata-facile" class="view class-page facile-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>La durata delle note</h2></div>
   <div class="sections"><div class="article-body facile-body">
     <p class="facile-line">Ogni nota ha una durata.</p>
@@ -3096,7 +3137,7 @@
 </section>
 
 <section id="view-spartito-ceciderunt" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Ceciderunt in profundum</h2></div>
   <div class="sections"><div class="article-body">
     <p>Georg Philipp Telemann, canone a tre voci. Tutte le voci cantano la stessa melodia, ma entrano una dopo l'altra: i numeri 1., 2. e 3. indicano dove entra ciascuna voce. La seconda parte quando la prima arriva alla battuta 9, la terza quando la prima arriva alla battuta 17.</p>
@@ -3123,7 +3164,7 @@
 </section>
 
 <section id="view-spartito-geographical" class="view class-page">
-  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button></div>
+  <div class="class-top"><button class="back-btn" onclick="goBack()">← Indietro</button><button class="print-btn" onclick="window.print()">🖨 Stampa</button></div>
   <div class="class-hero" style="border-color:var(--gold);"><h2>Geographical Fugue</h2></div>
   <div class="sections"><div class="article-body">
     <p>Ernst Toch (1930), adattamento di Elena García. Fuga per due voci parlate: non ci sono altezze, si recita il testo a tempo (♩ = 150). La voce 1 entra per prima, la voce 2 entra alla battuta 7 con lo stesso inizio.</p>
@@ -4180,6 +4221,79 @@
       if(checkedVal === q.correct) score++;
     });
     document.getElementById('quiz-result').textContent = 'Punteggio: ' + score + ' / ' + data.questions.length;
+  }
+
+  /* ---- Stampa: pagina singola e libro della classe ---- */
+  function notaVideo(src){
+    var p=document.createElement('p'), m;
+    p.className='print-video';
+    if((m=/youtube\.com\/embed\/([\w-]+)/.exec(src))) p.textContent='▶ Video: https://youtu.be/'+m[1];
+    else if((m=/drive\.google\.com\/file\/d\/([\w-]+)/.exec(src))) p.textContent='▶ Video: https://drive.google.com/file/d/'+m[1]+'/view';
+    else if(/^data:/.test(src)) p.textContent='Contenuto interattivo: disponibile solo online.';
+    else p.textContent='Contenuto online: '+src;
+    return p;
+  }
+  function contenitoreIframe(f){ return f.closest('.map-embed, .instr-video') || f; }
+  function aggiungiNoteVideoStampa(){
+    document.querySelectorAll('.view.active iframe').forEach(function(f){
+      var c=contenitoreIframe(f), nx=c.nextElementSibling;
+      if(nx && nx.hasAttribute('data-auto')) return;
+      var n=notaVideo(f.getAttribute('src')||'');
+      n.setAttribute('data-auto','1'); c.parentNode.insertBefore(n, c.nextSibling);
+    });
+  }
+  function togliNoteVideoStampa(){
+    document.querySelectorAll('.print-video[data-auto]').forEach(function(n){ n.remove(); });
+  }
+  function pulisciLibro(){
+    var b=document.getElementById('print-book'); if(b) b.remove();
+    document.body.classList.remove('printing-book');
+  }
+  window.addEventListener('beforeprint', function(){
+    if(!document.body.classList.contains('printing-book')) aggiungiNoteVideoStampa();
+  });
+  window.addEventListener('afterprint', function(){ togliNoteVideoStampa(); pulisciLibro(); });
+  var LIBRI = {prima:'Classe Prima', seconda:'Classe Seconda', terza:'Classe Terza', riassunti:'Riassunti'};
+  function pagineDelLibro(cl){
+    var ids=[], seen={};
+    document.getElementById('view-'+cl).querySelectorAll('[onclick]').forEach(function(el){
+      var m=/openTopic\('([^']+)'/.exec(el.getAttribute('onclick'));
+      if(!m) return;
+      var id=m[1];
+      if(id.indexOf('quiz')===0 || seen[id] || !document.getElementById('view-'+id)) return;
+      seen[id]=1; ids.push(id);
+    });
+    return ids;
+  }
+  function costruisciLibro(cl){
+    pulisciLibro();
+    var book=document.createElement('div'); book.id='print-book';
+    var cover=document.createElement('section'); cover.className='book-cover';
+    cover.innerHTML='<h1>Sito Musica</h1><h2>'+LIBRI[cl]+'</h2><p>Materiale didattico di musica</p>';
+    book.appendChild(cover);
+    var toc=document.createElement('section'); toc.className='book-toc';
+    toc.innerHTML='<h2>Indice</h2>'; var ol=document.createElement('ol'); toc.appendChild(ol); book.appendChild(toc);
+    pagineDelLibro(cl).forEach(function(id){
+      var c=document.getElementById('view-'+id).cloneNode(true);
+      c.removeAttribute('id'); c.className='book-page'+(id==='topic-polifonia-tabella-3' ? ' wide' : '');
+      c.querySelectorAll('[id]').forEach(function(e){ e.removeAttribute('id'); });
+      c.querySelectorAll('.class-top, .listen-btn, .print-btn, .quiz-tag, .quiz-row, .cn-bar, .cn-voices, .gf-note, .cn-hl, .cn-sel').forEach(function(e){ e.remove(); });
+      c.querySelectorAll('iframe').forEach(function(f){
+        var cc=contenitoreIframe(f); cc.parentNode.replaceChild(notaVideo(f.getAttribute('src')||''), cc);
+      });
+      var h=c.querySelector('.class-hero h2'), li=document.createElement('li');
+      li.textContent=h ? h.textContent : id; ol.appendChild(li);
+      book.appendChild(c);
+    });
+    document.body.appendChild(book);
+    document.body.classList.add('printing-book');
+    return book;
+  }
+  function stampaLibro(cl){
+    if(typeof canonStop==='function') canonStop();
+    if(typeof gfStop==='function') gfStop();
+    costruisciLibro(cl);
+    setTimeout(function(){ window.print(); }, 100);
   }
 
   /* ---- Ascolta il testo (sintesi vocale del browser) ---- */
