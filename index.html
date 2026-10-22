@@ -100,7 +100,7 @@
     display:inline-flex; align-items:center; gap:10px;
     background:#fff; border:1.5px solid var(--accent); color:var(--accent);
     font-family:'Inter',sans-serif; font-size:.92rem; font-weight:600;
-    padding:11px 22px; border-radius:5px; cursor:pointer;
+    padding:11px 22px; border-radius:5px; cursor:pointer; text-decoration:none;
   }
   .download-book-btn:hover{background:var(--accent); color:#fff;}
   .download-book-btn .dl-icon{font-size:1rem;}
@@ -508,9 +508,9 @@
   <div class="class-top"><button class="back-btn" onclick="show('home')">← Home</button></div>
   <div class="class-hero"><span class="roman">I</span><h2>Prima</h2></div>
   <div class="download-book-wrap">
-    <button class="download-book-btn" id="download-libro-prima" onclick="stampaLibro('prima')" title="Si apre la finestra di stampa: scegli «Salva come PDF»">
+    <a class="download-book-btn" id="download-libro-prima" href="libro-prima.pdf" download="Musica - Prima.pdf">
       <span class="dl-icon">📥</span> Scarica il libro della classe Prima (PDF)
-    </button>
+    </a>
   </div>
   <div class="sections">
 
@@ -584,9 +584,9 @@
   <div class="class-top"><button class="back-btn" onclick="show('home')">← Home</button></div>
   <div class="class-hero"><span class="roman">II</span><h2>Seconda</h2></div>
   <div class="download-book-wrap">
-    <button class="download-book-btn" id="download-libro-seconda" onclick="stampaLibro('seconda')" title="Si apre la finestra di stampa: scegli «Salva come PDF»">
+    <a class="download-book-btn" id="download-libro-seconda" href="libro-seconda.pdf" download="Musica - Seconda.pdf">
       <span class="dl-icon">📥</span> Scarica il libro della classe Seconda (PDF)
-    </button>
+    </a>
   </div>
   <div class="sections">
 
@@ -661,9 +661,9 @@
   <div class="class-top"><button class="back-btn" onclick="show('home')">← Home</button></div>
   <div class="class-hero"><span class="roman">III</span><h2>Terza</h2></div>
   <div class="download-book-wrap">
-    <button class="download-book-btn" id="download-libro-terza" onclick="stampaLibro('terza')" title="Si apre la finestra di stampa: scegli «Salva come PDF»">
+    <a class="download-book-btn" id="download-libro-terza" href="libro-terza.pdf" download="Musica - Terza.pdf">
       <span class="dl-icon">📥</span> Scarica il libro della classe Terza (PDF)
-    </button>
+    </a>
   </div>
   <div class="sections">
 
@@ -786,9 +786,9 @@
   <div class="class-top"><button class="back-btn" onclick="show('home')">← Home</button></div>
   <div class="class-hero"><h2>Riassunti</h2></div>
   <div class="download-book-wrap">
-    <button class="download-book-btn" id="download-libro-riassunti" onclick="stampaLibro('riassunti')" title="Si apre la finestra di stampa: scegli «Salva come PDF»">
+    <a class="download-book-btn" id="download-libro-riassunti" href="libro-riassunti.pdf" download="Musica - Riassunti.pdf">
       <span class="dl-icon">📥</span> Scarica il libro dei Riassunti (PDF)
-    </button>
+    </a>
   </div>
   <div class="sections">
     <div class="subsection">
